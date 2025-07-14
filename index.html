@@ -3,230 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Свой Дом - Проект MiniDom 36</title>
-    <meta name="description" content="Проект современного каркасного дома MiniDom 36. Полноценная евродвушка с отдельной спальней для круглогодичного проживания.">
+    <title>МиниДом 36 - Свой Дом | Стильный дом на 36 м²</title>
+    <meta name="description" content="Мини-дом: стильный дом на 36 м². Полноценная «евродвушка» по финской технологии от компании «Свой Дом».">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
-        :root {
-            --color-deep-blue: #2c3e50;
-            --color-coral-accent: #FF6F61;
-            --color-ivory-white: #f5f6fa;
-            --color-light-gray: #e9ecef;
-            --font-headings: 'Montserrat', sans-serif;
-            --font-body: 'Roboto', sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        body, html { margin: 0; padding: 0; font-family: var(--font-body); color: var(--color-deep-blue); background-color: #ffffff; line-height: 1.6; scroll-behavior: smooth; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        h1, h2, h3 { font-family: var(--font-headings); font-weight: 700; }
-        h2 { text-align: center; font-size: clamp(2em, 5vw, 2.5em); margin-bottom: 60px; }
-        section { padding: 80px 0; overflow: hidden; }
-        img { max-width: 100%; height: auto; display: block; }
-        .btn { display: inline-block; padding: 16px 32px; border-radius: 50px; text-decoration: none; font-family: var(--font-headings); transition: all 0.3s ease; border: 2px solid; cursor: pointer; font-weight: 700; }
-        .btn:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
-        .btn-primary { background-color: var(--color-coral-accent); color: white; border-color: var(--color-coral-accent); }
-        
-        .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 20px; }
-        .hero-background-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
-        .hero-content { animation: fadeIn 1.2s ease-out; background-color: rgba(44, 62, 80, 0.5); padding: 30px; border-radius: 10px; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        .hero h2 { font-size: clamp(1.1rem, 3vw, 1.3rem); max-width: 800px; margin: 0 auto; color: rgba(255,255,255,0.9); font-family: var(--font-body); }
-        
-        .gallery { background-image: url('https://github.com/domdom610/Svoy-Dom/blob/main/images/%D0%BF%D0%BB%D0%B5%D0%B4.jpg?raw=true'); background-attachment: fixed; background-size: cover; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .gallery-grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .gallery-grid img:hover { transform: scale(1.03); }
-        
-        .features { background-color: var(--color-ivory-white); }
-        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
-        .feature-icon { max-height: 80px; margin-bottom: 20px; display: inline-block; }
-        
-        .technology { background-color: #e9ecef; }
-        .technology-container { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
-.technology-image-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        .technology-image-grid img { width: 100%; border-radius: 8px; }
-        
-        .pricing { background-color: var(--color-ivory-white); }
-        .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px; }
-        .price-card { border: 1px solid #e0e0e0; padding: 30px; border-radius: 8px; text-align: center; background-color: white; transition: all 0.3s ease; }
-        .price-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.07); }
-        .price-card .price { font-size: 2em; font-family: var(--font-headings); color: var(--color-coral-accent); margin: 10px 0 20px 0; }
-        
-        .floor-plan { background-color: #ffffff; padding-top: 0; }
-        .floor-plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; max-width: 1000px; margin: 0 auto; }
-        .floor-plan-grid img { width: 100%; border: 1px solid #eee; border-radius: 8px; }
-        
-        .cta { text-align: center; background-color: var(--color-deep-blue); color: white; }
-        .cta h2 { color: white; }
-        .cta p { color: rgba(255,255,255,0.8); }
-        .cta-form { display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 40px; }
-        .cta-form input { padding: 15px; width: 100%; max-width: 400px; border: 1px solid #ccc; border-radius: 8px; font-size: 1em; font-family: var(--font-body); }
-        .cta-form button { width: 100%; max-width: 434px; padding: 16px 32px; border-radius: 50px; font-weight: 700; transition: all 0.3s ease; cursor: pointer; background-color: var(--color-coral-accent); color: white; border: 2px solid var(--color-coral-accent); }
-        
-        .footer { background-color: #1a2633; color: rgba(255,255,255,0.6); text-align: center; padding: 40px 0; }
-        
-        .sergey-fab {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 80px;
-            height: 80px;
-            background-color: var(--color-coral-accent);
-            border-radius: 50%;
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a252f;
+            color: #f5f6fa;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.6), rgba(44, 62, 80, 0.6)), url('https://iili.io/FVb3hhX.png') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            color: white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            border: 2px solid white;
-            cursor: pointer;
-            font-family: var(--font-body);
-            font-size: 11px;
-            font-weight: 700;
-            line-height: 1.2;
+            align-items: center;
             text-align: center;
         }
-        .sergey-fab:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        .hero .logo {
+            width: 150px;
+            margin-bottom: 20px;
         }
-        .sergey-fab-icon {
-            width: 36px;
-            height: 36px;
-            margin-bottom: 2px;
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
-
-        @media (max-width: 768px) { 
-            section { padding: 60px 0; } 
-            h2 { font-size: 2em; } 
-            .features-grid, .pricing-grid, .technology-container, .floor-plan-grid { grid-template-columns: 1fr; } 
-            .sergey-fab { width: 70px; height: 70px; bottom: 20px; right: 20px; }
-            .sergey-fab-icon { width: 32px; height: 32px; }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        /* General Section Styling */
+        section {
+            padding: 50px 0;
+        }
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+        .card {
+            background: rgba(44, 62, 80, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        /* Gallery */
+        .gallery .grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        /* Features */
+        .features .grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        .features .card img {
+            width: 50px;
+            margin: 0 auto 10px;
+        }
+        .features h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        /* Technology */
+        .technology .grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            align-items: center;
+        }
+        .technology img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        /* Pricing */
+        .pricing .grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        .pricing h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        /* Floor Plan */
+        .floor-plan .grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        .floor-plan img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        /* CTA */
+        .cta form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .cta input, .cta .btn {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+}
+        .cta .btn {
+            background-color: #FF6F61;
+            color: #fff;
+            cursor: pointer;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(44, 62, 80, 0.5);
+        }
+        /* Floating Button */
+        .sergey-fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #FF6F61;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .sergey-fab svg {
+            width: 24px;
+            height: 24px;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            h2 { font-size: 1.5rem; }
+            .grid { grid-template-columns: 1fr; }
             .sergey-fab span { display: none; }
         }
     </style>
 </head>
 <body>
-<main>
-    <section class="hero">
-        <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F.jpg?raw=true" class="hero-background-image" alt="Фон - красивый дом в лесу">
-        <div class="hero-content" data-aos="fade-in" data-aos-delay="200">
+    <section class="hero" data-aos="fade-in">
+        <div class="hero-content">
+            <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424535_y.jpg?raw=true" alt="Логотип" class="logo">
             <h1>Мини-дом: стильный дом на 36 м²</h1>
-            <h2>Полноценная «евродвушка» с изолированной спальней и просторной кухней-гостиной. Построен по финской технологии для комфортной жизни круглый год.</h2>
-</div>
+            <p>Полноценная «евродвушка» по финской технологии с панорамными окнами</p>
+            <button class="btn" onclick="openSergeyChat()">Задать вопрос прорабу</button>
+        </div>
     </section>
-    <section class="gallery" id="gallery">
+
+    <section class="gallery" id="gallery" data-aos="fade-up">
         <div class="container">
-            <h2 data-aos="fade-up">Пространство, созданное для жизни и отдыха</h2>
-            <div class="gallery-grid">
-                <div data-aos="fade-up" data-aos-delay="100"><img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424526_y.jpg?raw=true" alt="Главное фото дома" loading="lazy"></div>
-                <div data-aos="fade-up" data-aos-delay="200"><img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424523_y.jpg?raw=true" alt="Терраса дома" loading="lazy"></div>
-                <div data-aos="fade-up" data-aos-delay="300"><img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424536_y.jpg?raw=true" alt="Вид на террасу" loading="lazy"></div>
-                <div data-aos="fade-up" data-aos-delay="400"><img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443011784094118439_x.jpg?raw=true" alt="Экстерьер дома" loading="lazy"></div>
-                <div data-aos="fade-up" data-aos-delay="100"><img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424533_x.jpg?raw=true" alt="Кухня-гостиная" loading="lazy"></div>
-                <div data-aos="fade-up" data-aos-delay="200"><img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424534_x.jpg?raw=true" alt="Спальня" loading="lazy"></div>
-                <div data-aos="fade-up" data-aos-delay="300"><img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424527_y.jpg?raw=true" alt="Деталь спальни" loading="lazy"></div>
-                <div data-aos="fade-up" data-aos-delay="400"><img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424522_y.jpg?raw=true" alt="Окно в спальне" loading="lazy"></div>
+            <h2>Пространство, созданное для жизни и отдыха</h2>
+            <div class="grid">
+                <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424526_y.jpg?raw=true" alt="Галерея 1">
+                <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424523_y.jpg?raw=true" alt="Галерея 2">
+                <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424536_y.jpg?raw=true" alt="Галерея 3">
+                <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443011784094118439_x.jpg?raw=true" alt="Галерея 4">
+                <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424533_x.jpg?raw=true" alt="Галерея 5">
+                <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424534_x.jpg?raw=true" alt="Галерея 6">
+                <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424527_y.jpg?raw=true" alt="Галерея 7">
+                <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424522_y.jpg?raw=true" alt="Галерея 8">
             </div>
         </div>
     </section>
-    <section class="features" id="features">
+
+    <section class="features" id="features" data-aos="fade-up">
         <div class="container">
-            <h2 data-aos="fade-up">Разумный выбор в цифрах и фактах</h2>
-            <div class="features-grid">
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424530_y.jpg?raw=true" alt="Иконка Энергоэффективность" class="feature-icon" loading="lazy">
-                    <h3>Энергоэффективность</h3><p>Перекрестное утепление 200 мм и двухкамерные стеклопакеты. Экономия на отоплении до 40%.</p>
+            <h2>Разумный выбор в цифрах и фактах</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424530_y.jpg?raw=true" alt="Иконка Энергоэффективность" class="feature-icon">
+                    <h3>Энергоэффективность</h3>
+                    <p>Перекрестное утепление 200 мм и двухкамерные стеклопакеты. Экономия на отоплении до 40%.</p>
                 </div>
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424531_y.jpg?raw=true" alt="Иконка Экологичные материалы" class="feature-icon" loading="lazy">
-                    <h3>Экологичные материалы</h3><p>Каркас из сухой строганой доски и безопасный для здоровья базальтовый утеплитель.</p>
+                <div class="card">
+                    <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424531_y.jpg?raw=true" alt="Иконка Экологичные материалы" class="feature-icon">
+                    <h3>Экологичные материалы</h3>
+<p>Каркас из сухой строганой доски и безопасный для здоровья базальтовый утеплитель.</p>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424532_y.jpg?raw=true" alt="Иконка Быстрые сроки" class="feature-icon" loading="lazy">
-                    <h3>Быстрые сроки</h3><p>Строительство дома занимает от 2 до 3 месяцев, в отличие от 8-12 месяцев для каменных домов.</p>
+                <div class="card">
+                    <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424532_y.jpg?raw=true" alt="Иконка Быстрые сроки" class="feature-icon">
+                    <h3>Быстрые сроки</h3>
+                    <p>Строительство дома занимает от 2 до 3 месяцев, в отличие от 8-12 месяцев для каменных домов.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="technology">
-        <div class="container technology-container">
-            <div class="technology-image-grid" data-aos="fade-right">
-                <img src="https://i.postimg.cc/FzMKXNS6/IMG-20250714-183203-930.webp" alt="3D разрез стены">
-            </div>
-            <div class="technology-text" data-aos="fade-left">
-<h2>Тепло, которое можно увидеть.</h2><p>Мы не экономим на том, что скрыто от глаз. В основе каждого нашего дома — проверенная финская технология с перекрестным утеплением. Сначала мы монтируем основной слой утеплителя (150 мм) между стойками каркаса, а затем добавляем еще один, горизонтальный слой (50 мм), который полностью перекрывает «мостики холода». В сочетании с профессиональными мембранами это создает эффект термоса, сохраняя тепло зимой и прохладу летом.</p>
-            </div>
-        </div>
-    </section>
-    <section class="pricing" id="pricing">
+
+    <section class="technology" id="technology" data-aos="fade-up">
         <div class="container">
-             <h2 data-aos="fade-up">Выберите свою комплектацию</h2>
-             <div class="pricing-grid">
-                <div class="price-card" data-aos="fade-up" data-aos-delay="100">
-                    <h3>«Теплый контур»</h3><div class="price">от 1 190 000 ₽</div><p>Готовая внешняя коробка дома: фундамент, стены, кровля, окна, фасад, входная дверь. Идеально, если вы хотите делать внутреннюю отделку самостоятельно.</p>
+            <div class="grid">
+                <img src="https://i.postimg.cc/FzMKXNS6/IMG-20250714-183203-930.webp" alt="Разрез стены дома">
+                <div>
+                    <h2>Тепло, которое можно увидеть</h2>
+                    <p>Мы не экономим на том, что скрыто от глаз. В основе каждого нашего дома — проверенная финская технология с перекрестным утеплением. Сначала мы монтируем основной слой утеплителя (150 мм) между стойками каркаса, а затем добавляем еще один, горизонтальный слой (50 мм), который полностью перекрывает «мостики холода». В сочетании с профессиональными мембранами это создает эффект термоса.</p>
                 </div>
-                <div class="price-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3>«Под ключ»</h3><div class="price">от 2 090 000 ₽</div><p>Всё из «Теплого контура», а также полная внутренняя отделка, двери, электрика и сантехника. Вам останется только завезти мебель.</p>
-                </div>
-             </div>
-        </div>
-    </section>
-    <section class="floor-plan" id="floor-plan">
-        <div class="container">
-            <h2 data-aos="fade-up">Продуманная планировка</h2>
-            <div class="floor-plan-grid" data-aos="fade-up">
-                <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424521_y.jpg?raw=true" alt="Планировка дома">
-                <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424529_y.jpg?raw=true" alt="Вариант планировки">
             </div>
         </div>
     </section>
-    <section class="cta" id="cta">
-        <div class="container" data-aos="fade-up">
+    
+    <section class="pricing" id="pricing" data-aos="fade-up">
+        <div class="container">
+            <h2>Выберите свою комплектацию</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>«Теплый контур»</h3>
+                    <p class="price">от 1 190 000 ₽</p>
+                    <p>Готовая внешняя коробка дома: фундамент, стены, кровля, окна, фасад, входная дверь.</p>
+                </div>
+                <div class="card">
+                    <h3>«Под ключ»</h3>
+                    <p class="price">от 2 090 000 ₽</p>
+                    <p>Всё из «Теплого контура», а также полная внутренняя отделка, двери, электрика и сантехника.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="floor-plan" id="floor-plan" data-aos="fade-up">
+        <div class="container">
+            <h2>Продуманная планировка</h2>
+            <div class="grid">
+                <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424521_y.jpg?raw=true" alt="Планировка 1">
+                <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424529_y.jpg?raw=true" alt="Планировка 2">
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="cta" data-aos="fade-up">
+        <div class="container">
             <h2>Готовы сделать шаг к дому своей мечты?</h2>
-            <p>Оставьте заявку, и наш специалист свяжется с вами. Мы вышлем вам подробную смету, ответим на все вопросы и поможем с выбором участка и оформлением ипотеки.</p>
-            <form class="cta-form" action="#">
-                <input type="text" placeholder="Ваше имя" required><input type="tel" placeholder="Ваш телефон" required>
-                <button type="submit" class="btn btn-primary">Получить консультацию</button>
+            <p>Оставьте заявку, и наш специалист свяжется с вами.</p>
+            <form class="cta-form">
+                <input type="text" placeholder="Имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <button type="submit" class="btn">Получить консультацию</button>
             </form>
         </div>
     </section>
-</main>
-<footer class="footer">
-    <div class="container">
-        <p>© 2025 «Свой Дом». Все права защищены.</p>
-        <p>Информация на сайте не является публичной офертой.</p>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Свой Дом. Все права защищены.</p>
+            <p>Информация на сайте не является публичной офертой.</p>
+        </div>
+    </footer>
+
+    <div class="sergey-fab" onclick="openSergeyChat()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+<span>Сергей Прораб</span>
     </div>
-</footer>
-
-<button onclick="window.chatbase.openChat()" class="sergey-fab" aria-label="Задать вопрос прорабу">
-    <svg class="sergey-fab-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
-    <span>Сергей<br>Прораб</span>
-</button>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="elEbjas8v3UayyJoEx6Fq";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
-<script>
-    // Этот скрипт теперь должен быть ПОСЛЕ скрипта Chatbase, чтобы он успел загрузиться
-    document.addEventListener('DOMContentLoaded', function () {
-        AOS.init({
-            duration: 800,
-            once: true,
+    
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true
+            });
         });
-    });
-</script>
+        
+        function openSergeyChat() {
+            if (window.chatbase && typeof window.chatbase.openChat === 'function') {
+                window.chatbase.openChat();
+            } else {
+                console.error("Chatbase is not loaded yet. Please try again later.");
+            }
+        }
+    </script>
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="elEbjas8v3UayyJoEx6Fq";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
 </body>
 </html>
+
+
+
 
       
       
