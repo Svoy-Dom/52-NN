@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Свой дом НН | Современные каркасные дома в Нижнем Новгороде</title>
+  <meta name="description" content="Проектируем и строим стильные каркасные дома с высокими сводчатыми потолками. Проекты «Семейный 40», «МиниДом 36» и «Дом Куб 30». Узнайте стоимость!">
+  <meta property="og:title" content="Свой дом НН | Современные каркасные дома в Нижнем Новгороде">
+  <meta property="og:description" content="Проектируем и строим стильные каркасные дома с высокими сводчатыми потолками. Проекты «Семейный 40», «МиниДом 36» и «Дом Куб 30». Узнайте стоимость!">
+  <meta property="og:image" content="https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png">
+  <meta name="theme-color" content="#1a252f">
+  <link rel="icon" href="https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #1a252f;
+      --bg-card: rgba(44, 62, 80, 0.7);
+      --text-main: #f5f6fa;
+      --accent: #FF6F61;
+      --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      --radius: 18px;
+      --blur: blur(10px);
+    }
+    html { box-sizing: border-box; }
+    *, *:before, *:after { box-sizing: inherit; }
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 100;
+      background: rgba(26,37,47,0.95);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 1rem 0.5rem;
+    }
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a.active, nav a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    main {
+      padding-top: 70px;
+    }
+    .hero {
+      min-height: 100vh;
+      background: url('https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 1.5rem;
+      position: relative;
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+      color: var(--text-main);
+      text-shadow: 0 2px 16px rgba(0,0,0,0.25);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 500px;
+      color: var(--text-main);
+      margin-bottom: 0;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    }
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.2rem;
+    }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: var(--text-main);
+    }
+    .philosophy {
+      text-align: center;
+    }
+    .philosophy p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #dbe6f6;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 600px) {
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (min-width: 900px) {
+      .projects-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: var(--blur);
+      padding: 1.2rem 1rem 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.18s, box-shadow 0.18s;
+      min-height: 420px;
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 40px 0 rgba(31,38,135,0.25);
+    }
+    .card img {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    }
+    .card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      margin: 0.5rem 0 0.7rem 0;
+      color: var(--text-main);
+    }
+    .card p {
+      font-size: 1rem;
+      color: #e1e6ed;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    .card .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.18s, box-shadow 0.18s;
+      box-shadow: 0 2px 8px rgba(255,111,97,0.12);
+    }
+    .card .btn:hover {
+      background: #ff3b2e;
+      box-shadow: 0 4px 16px rgba(255,111,97,0.18);
+    }
+    .custom-design {
+      background: linear-gradient(120deg, rgba(44,62,80,0.85) 60%, rgba(26,37,47,0.95) 100%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem 1.2rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+    .custom-design h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.7rem;
+      color: var(--accent);
+    }
+    .custom-design p {
+      color: #e1e6ed;
+      font-size: 1.08rem;
+      margin-bottom: 0.5rem;
+    }
+    /* Floating Sergey FAB */
+    .sergey-fab {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      z-index: 999;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 68px;
+      height: 68px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(255,111,97,0.25);
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+      gap: 0.2rem;
+      animation: fab-pop 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    .sergey-fab:hover {
+      background: #ff3b2e;
+      transform: scale(1.07);
+      box-shadow: 0 8px 32px rgba(255,111,97,0.32);
+    }
+    .sergey-fab svg {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 0.1rem;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+    }
+    @keyframes fab-pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      80% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    /* AOS Animations */
+    [data-aos] { opacity: 0; transition-property: opacity, transform; }
+    [data-aos].aos-animate { opacity: 1; }
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.5rem; }
+      .hero p { font-size: 1rem; }
+      h2 { font-size: 1.3rem; }
+      .card { min-height: 340px; }
+      .custom-design { padding: 1.2rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="active">Главная</a>
+      <a href="semeiny-40.html">Семейный 40</a>
+      <a href="minidom-36.html">МиниДом 36</a>
+      <a href="dom-kub-30.html">Дом Куб 30</a>
+      <a href="technology.html">Технологии</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="hero">
+      <h1 data-aos="fade-up">Пространство. Свет. Ваш Дом.</h1>
+      <p data-aos="fade-up" data-aos-delay="150">Проектируем и строим современные каркасные дома с высокими, сводчатыми потолками.</p>
+    </section>
+    <section class="philosophy" id="philosophy">
+      <h2 data-aos="fade-up">Эконом — не значит компромисс в эстетике</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Наша миссия — создавать стильные, светлые и просторные дома, где нет места скучным прямым потолкам. Мы проектируем пространства, в которых хочется жить, отдыхать и вдохновляться каждый день.</p>
+    </section>
+    <section id="projects">
+      <h2 data-aos="fade-up">Наши проекты</h2>
+      <div class="projects-grid">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://i.postimg.cc/1zqmWjSY/photo-5467372104157624625-x.jpg" alt="Семейный 40" loading="lazy">
+          <h3>Семейный 40</h3>
+          <p>40 м², 2 спальни, просторная кухня-гостиная, терраса. Идеальный дом для семьи с ребенком.</p>
+          <a href="semeiny-40.html" class="btn">Подробнее</a>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424526_y.jpg?raw=true" alt="МиниДом 36" loading="lazy">
+          <h3>МиниДом 36</h3>
+          <p>36 м², 1 спальня, кухня-гостиная, терраса. Компактный и стильный дом для пары или дачи.</p>
+          <a href="minidom-36.html" class="btn">Подробнее</a>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://i.postimg.cc/htSQ5xtq/photo-5467925983140117240-y.jpg" alt="Дом Куб 30" loading="lazy">
+          <h3>Дом Куб 30</h3>
+          <p>30 м², открытая планировка, панорамные окна. Минимализм и максимум света для жизни и отдыха.</p>
+          <a href="dom-kub-30.html" class="btn">Подробнее</a>
+        </div>
+      </div>
+    </section>
+    <section class="custom-design" id="custom-design">
+      <h2 data-aos="fade-up">Дом по вашим правилам</h2>
+      <h3 data-aos="fade-up" data-aos-delay="100">От планировки до последней занавески</h3>
+      <p data-aos="fade-up" data-aos-delay="200">Мы не ограничиваемся типовыми проектами — спроектируем дом любой площади и планировки, под ваши задачи и стиль жизни. <br>Также предлагаем профессиональный дизайн интерьера: поможем с расстановкой мебели, подбором материалов и схем освещения, чтобы ваш дом был по-настоящему уникальным и уютным.</p>
+    </section>
+  </main>
+  <button class="sergey-fab" onclick="window.chatbase.openChat()" aria-label="Чат с прорабом Сергеем">
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="24" r="24" fill="#fff"/>
+      <path d="M24 8c-4.418 0-8 3.582-8 8v2c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2v-2c0-4.418-3.582-8-8-8zm0 20c-5.523 0-10 4.477-10 10h20c0-5.523-4.477-10-10-10z" fill="#FF6F61"/>
+      <circle cx="24" cy="20" r="4" fill="#FF6F61"/>
+    </svg>
+    <span style="font-size:0.85rem;">Сергей<br>Прораб</span>
+  </button>
+  <!-- AOS & Chatbase scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script>AOS.init({ once: true, duration: 700, offset: 80 });</script>
+  <script>
+    window.chatbase = {
+      openChat: function() { window.ChatbaseWidget && window.ChatbaseWidget.open(); }
+    };
+    (function(d, t) {
+      var s = d.createElement(t), opts = {
+        id: "elEbjas8v3UayyJoEx6Fq",
+        accent: "#FF6F61",
+        welcomeMessage: "Здравствуйте! Я — Сергей, ваш прораб. Чем могу помочь?",
+        avatar: "https://i.postimg.cc/1zqmWjSY/photo-5467372104157624625-x.jpg"
+      };
+      s.src = "https://www.chatbase.co/embed.min.js";
+      s.async = 1;
+      s.onload = function() { window.ChatbaseWidget && window.ChatbaseWidget.init(opts); };
+      d.body.appendChild(s);
+    })(document, "script");
+  </script>
+</body>
+</html>
