@@ -9,11 +9,11 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Современные каркасные дома под ключ | Свой дом НН">
     <meta property="og:description" content="Энергоэффективные каркасные дома в Нижнем Новгороде от 1.48 млн ₽. Строительство за 2-4 месяца.">
-    <meta property="og:image" content="https://svoy-dom-nn.ru/assets/og-image.jpg">
+    <meta property="og:image" content="/assets/og-image.jpg">
     <meta property="og:url" content="https://svoy-dom-nn.ru">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://svoy-dom-nn.ru/assets/og-image.jpg">
+    <meta name="twitter:image" content="/assets/og-image.jpg">
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <!-- Google Tag Manager -->
     <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -26,8 +26,9 @@
         :root {
             --primary-color: #FF6F61;
             --neon-color: #00ffcc;
-            --background-color: #f4f4f4;
-            --text-color: #333;
+            --background-color: #1a1a1a; /* Тёмная тема */
+            --text-color: #ffffff;
+            --card-background: #2a2a2a;
         }
         html {
             scroll-behavior: smooth;
@@ -46,7 +47,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            color: white;
+            color: var(--text-color);
             overflow: hidden;
         }
         header video {
@@ -63,7 +64,7 @@
             padding: 2rem;
             margin-left: 5%;
             z-index: 1;
-            background: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон для лучшей читаемости */
+            background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для читаемости */
             border-radius: 10px;
         }
         header h1 {
@@ -86,7 +87,7 @@
             bottom: 20px;
             right: 20px;
             background-color: #000;
-            color: #fff;
+            color: var(--text-color);
             padding: 10px 20px;
             border-radius: 5px;
             font-size: 1rem;
@@ -115,10 +116,10 @@
             margin: 0 auto;
         }
         .project-card {
-            background: white;
+            background: var(--card-background);
             border-radius: 10px;
             padding: 1.5rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             animation: fadeInUp 1s ease-out forwards;
             animation-delay: calc(0.2s * var(--index));
             transition: transform 0.3s ease;
@@ -138,10 +139,10 @@
             margin: 0 auto;
         }
         .why-us-grid div {
-            background: white;
+            background: var(--card-background);
             padding: 1.5rem;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         .calculator, .reviews, .contact {
             margin: 3rem 0;
@@ -155,13 +156,15 @@
         }
         .calculator input, .calculator select, .contact input, .contact textarea {
             padding: 0.8rem;
-            border: 1px solid #ccc;
+            border: 1px solid #444;
             border-radius: 5px;
             font-size: 1rem;
+            background: #333;
+            color: var(--text-color);
         }
         .calculator button, .contact button {
             background: var(--primary-color);
-            color: white;
+            color: var(--text-color);
             padding: 0.8rem;
             border: none;
             border-radius: 5px;
@@ -186,13 +189,13 @@
             object-fit: cover;
         }
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #222;
+            color: var(--text-color);
             padding: 3rem 1rem;
             text-align: center;
         }
         footer a {
-            color: #fff;
+            color: var(--primary-color);
             text-decoration: none;
         }
         footer a:hover {
@@ -203,7 +206,7 @@
             bottom: 20px;
             left: 20px;
             background: var(--primary-color);
-            color: white;
+            color: var(--text-color);
             padding: 0.8rem 1.2rem;
             border-radius: 50%;
             text-decoration: none;
@@ -216,12 +219,12 @@
         }
         .scroll-top:hover {
             transform: scale(1.1);
-        }
+}
         .typing-animation {
             display: inline-block;
             border-right: 2px solid var(--primary-color);
             white-space: nowrap;
-overflow: hidden;
+            overflow: hidden;
             animation: typing 2.2s steps(38, end), blink-caret 0.7s step-end infinite;
         }
         @keyframes typing {
@@ -307,9 +310,8 @@ overflow: hidden;
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-        <video autoplay muted loop playsinline preload="auto" poster="/assets/poster.jpg">
-            <source src="/assets/video.mp4" type="video/mp4">
-            <source src="/assets/video.webm" type="video/webm">
+        <video autoplay muted loop playsinline>
+            <source src="video.mp4" type="video/mp4">
             Ваш браузер не поддерживает видео.
         </video>
         <div class="header-content">
@@ -390,8 +392,8 @@ overflow: hidden;
         <div class="reviews-grid">
             <div>
                 <picture>
-                    <source srcset="/assets/maria.webp" type="image/webp">
-                    <img src="/assets/maria.jpg" alt="Фотография Марии" loading="lazy">
+                    <source srcset="maria.webp" type="image/webp">
+                    <img src="maria.jpg" alt="Фотография Марии" loading="lazy">
                 </picture>
                 <h3>Мария</h3>
                 <p>«Спасибо за дом! Всё прозрачно и быстро, уже живём, очень довольны!»</p>
@@ -399,8 +401,8 @@ overflow: hidden;
             </div>
             <div>
                 <picture>
-                    <source srcset="/assets/vladimir.webp" type="image/webp">
-                    <img src="/assets/vladimir.jpg" alt="Фотография Владимира" loading="lazy">
+                    <source srcset="vladimir.webp" type="image/webp">
+                    <img src="vladimir.jpg" alt="Фотография Владимира" loading="lazy">
                 </picture>
                 <h3>Владимир</h3>
                 <p>«Отличная команда! Помогли выбрать проект, всё по договору и без задержек.»</p>
@@ -415,8 +417,8 @@ overflow: hidden;
             <label for="name">Ваше имя:</label>
             <input type="text" id="name" name="name" placeholder="Ваше имя" required>
             <label for="phone">Ваш телефон:</label>
-<input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required>
-            <label for="email">Ваш email:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required>
+<label for="email">Ваш email:</label>
             <input type="email" id="email" name="email" placeholder="Ваш email" required>
             <label for="message">Ваше сообщение:</label>
             <textarea id="message" name="message" placeholder="Ваше сообщение"></textarea>
@@ -428,13 +430,13 @@ overflow: hidden;
     <footer>
         <h2>Свой дом НН</h2>
         <p>Современные каркасные дома с высокими сводчатыми потолками</p>
-        <p>+7 (920) 000-00-00</p>
         <p><a href="mailto:info@svoy-dom-nn.ru">info@svoy-dom-nn.ru</a></p>
+        <p>+7 (920) 000-00-00</p>
         <p>г. Нижний Новгород, ул. Строителей, 10</p>
         <div>
-            <a href="https://vk.com" aria-label="ВКонтакте"><img src="/assets/vk.png" alt="ВКонтакте" loading="lazy"></a>
-            <a href="https://t.me" aria-label="Telegram"><img src="/assets/telegram.png" alt="Telegram" loading="lazy"></a>
-            <a href="https://wa.me" aria-label="WhatsApp"><img src="/assets/whatsapp.png" alt="WhatsApp" loading="lazy"></a>
+            <a href="https://vk.com" aria-label="ВКонтакте"><img src="vk.png" alt="ВКонтакте" loading="lazy"></a>
+            <a href="https://t.me" aria-label="Telegram"><img src="telegram.png" alt="Telegram" loading="lazy"></a>
+            <a href="https://wa.me" aria-label="WhatsApp"><img src="whatsapp.png" alt="WhatsApp" loading="lazy"></a>
         </div>
         <p>© 2023-2025 Свой дом НН | <a href="/privacy.html" aria-label="Политика конфиденциальности">Политика конфиденциальности</a></p>
     </footer>
@@ -442,7 +444,7 @@ overflow: hidden;
     <a href="#" class="scroll-top" aria-label="Прокрутить наверх">↑</a>
 
     <script defer>
-        // Chatbase script
+        // Chatbase script with debug
         function openSergeyChat() {
             if (window.chatbase && typeof window.chatbase.openChat === 'function') {
                 window.chatbase.openChat();
@@ -450,7 +452,8 @@ overflow: hidden;
                     'event': 'open_foreman_chat'
                 });
             } else {
-                alert("Здравствуйте! Я прораб Сергей. Чат-бот загружается, подождите секунду...");
+                console.error('Chatbase not loaded or openChat not available');
+                alert("Здравствуйте! Я прораб Сергей. Чат-бот не загрузился. Пожалуйста, попробуйте позже.");
             }
         }
         (function(){
@@ -471,6 +474,8 @@ overflow: hidden;
                     script.id = "elEbjas8v3UayyJoEx6Fq";
                     script.domain = "www.chatbase.co";
                     script.defer = true;
+                    script.onload = () => console.log('Chatbase script loaded');
+                    script.onerror = () => console.error('Failed to load Chatbase script');
                     document.body.appendChild(script);
                 };
                 if (document.readyState === "complete") {
@@ -489,10 +494,10 @@ overflow: hidden;
             const finish = document.querySelector('#finish').value;
             const terrace = document.querySelector('#terrace').checked;
             if (area < 30  area > 40  isNaN(area)) {
-                alert('Пожалуйста, введите площадь от 30 до 40 м²');
+alert('Пожалуйста, введите площадь от 30 до 40 м²');
                 return;
             }
-let basePrice = area * 40000; // Пример: 40 000 ₽ за м²
+            let basePrice = area * 40000; // 40 000 ₽ за м²
             if (finish === 'standard') basePrice *= 1.2;
             if (finish === 'premium') basePrice *= 1.5;
             if (terrace) basePrice += 150000;
@@ -528,6 +533,7 @@ let basePrice = area * 40000; // Пример: 40 000 ₽ за м²
                     alert('Ошибка при отправке заявки.');
                 }
             } catch (error) {
+                console.error('Form submission error:', error);
                 alert('Ошибка сети. Пожалуйста, попробуйте позже.');
             }
         });
@@ -557,7 +563,7 @@ let basePrice = area * 40000; // Пример: 40 000 ₽ за м²
             "telephone": "+79200000000",
             "email": "info@svoy-dom-nn.ru",
             "url": "https://svoy-dom-nn.ru",
-            "image": "https://svoy-dom-nn.ru/assets/og-image.jpg",
+            "image": "/assets/og-image.jpg",
             "priceRange": "₽₽",
             "openingHours": "Mo-Fr 09:00-18:00"
         };
