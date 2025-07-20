@@ -21,6 +21,8 @@
       --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
       --radius: 18px;
       --blur: blur(10px);
+      --btn-glow: 0 8px 36px #ff6f6140, 0 2px 12px #fff2;
+      --btn-inner: linear-gradient(90deg, #FF6F61 40%, #FF8A7B 100%);
     }
     html { box-sizing: border-box; }
     *, *:before, *:after { box-sizing: inherit; }
@@ -134,77 +136,144 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+    /* HERO SECTION */
     .hero {
       position: relative;
       overflow: hidden;
       min-height: 100vh;
-      padding: 0 1rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      background: url('https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png') center center/cover no-repeat;
+      background: none;
     }
     .hero-bg-video {
-      display: none !important;
-    }
-    .hero-content,
-    .ceiling-effect {
-      position: relative;
-      z-index: 2;
-    }
-    .hero-content {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 3.5rem 0 2.5rem 0;
-    }
-    .hero-content h1 {
-      font-family: 'Montserrat',sans-serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--text-main);
-    }
-    .hero-content p {
-      font-size: 1.18rem;
-      color: #e1e6ed;
-      margin-bottom: 1.7rem;
-    }
-    .hero-cta {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-family: 'Montserrat',sans-serif;
-      font-weight: 700;
-      font-size: 1.07rem;
-      letter-spacing: 0.04em;
-      border: none;
-      border-radius: 8px;
-      padding: 0.8rem 1.8rem;
-      margin: 0 0.5rem 0.5rem 0.5rem;
-      text-decoration: none;
-      transition: background 0.2s, box-shadow 0.2s;
-      box-shadow: 0 2px 12px rgba(255,111,97,0.14);
-    }
-    .hero-cta.secondary {
-      background: transparent;
-      color: var(--accent);
-      border: 2px solid var(--accent);
-    }
-    .hero-cta:hover {
-      background: #ff3b2e;
-      color: #fff;
-      box-shadow: 0 4px 16px rgba(255,111,97,0.18);
-    }
-    .ceiling-effect {
-      width: 100%;
       position: absolute;
-      left: 0; bottom: 0;
+      top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.62) saturate(1.25);
+      pointer-events: none;
+      background: #222;
+    }
+    .hero-arch-wrapper {
+      position: relative;
+      width: 100vw;
+      max-width: 100%;
+      height: 180px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
       z-index: 2;
       pointer-events: none;
+      margin-bottom: 0.5rem;
     }
-    .ceiling-svg { width: 100%; height: 90px; display: block;}
+    .hero-arch-svg {
+      position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 100vw;
+      height: 180px;
+      min-width: 800px;
+      pointer-events: none;
+      z-index: 1;
+      display: block;
+      filter: drop-shadow(0 6px 24px #1115);
+      opacity: 0.9;
+    }
+    .rainbow-arch-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      letter-spacing: 0.03em;
+      background: linear-gradient(90deg, #FF6F61, #FFD700, #4FFFB0, #2196F3, #B54FFF, #FF6F61 60%);
+      background-size: 400% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: rainbow-move 4s linear infinite;
+      position: absolute;
+      left: 50%;
+      top: 18px;
+      width: 90vw;
+      min-width: 320px;
+      max-width: 950px;
+      text-align: center;
+      transform: translateX(-50%);
+      z-index: 2;
+      pointer-events: auto;
+      white-space: pre-line;
+      user-select: none;
+    }
+    @keyframes rainbow-move {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+      padding-top: 13vh;
+    }
+    .hero-subtitle {
+      color: #e1e6ed;
+      font-size: 1.22rem;
+      font-weight: 400;
+      margin-bottom: 2.5rem;
+      margin-top: 1.2rem;
+      opacity: 0.92;
+      animation: fadeInUp 1.3s cubic-bezier(0.2, 0.7, 0.3, 1) 0.2s both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(28px);}
+      to   { opacity: 1; transform: none;}
+    }
+    /* Кнопка фиксирована внизу */
+    .hero-cta-fixed {
+      position: fixed;
+      left: 0; right: 0; bottom: 32px;
+      margin: 0 auto;
+      z-index: 30;
+      display: inline-block;
+      background: var(--btn-inner);
+      color: #fff;
+      font-family: 'Montserrat',sans-serif;
+      font-weight: 700;
+      font-size: 1.19rem;
+      letter-spacing: 0.04em;
+      border: none;
+      border-radius: 11px;
+      padding: 1.1rem 0;
+      width: 300px;
+      box-shadow: var(--btn-glow);
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.13s;
+      animation: fadeInUp 1.15s cubic-bezier(0.21, 0.7, 0.3, 1.1) 0.7s both;
+    }
+    .hero-cta-fixed:hover, .hero-cta-fixed:focus {
+      background: linear-gradient(90deg, #FF8A7B 0%, #FF6F61 100%);
+      box-shadow: 0 12px 38px #ff6f6188, 0 3px 12px #fff4;
+      color: #fff;
+      transform: translateY(-2px) scale(1.04);
+    }
+    @media (max-width: 900px) {
+      .hero-arch-svg { min-width: 520px; height: 108px;}
+      .rainbow-arch-text { font-size: 1.13rem; width: 96vw; }
+      .hero-content { padding-top: 5vh;}
+    }
+    @media (max-width: 600px) {
+      .hero-content { padding-top: 5vh; }
+      .hero-arch-svg { height: 85px;}
+      .rainbow-arch-text { font-size: 0.94rem; top:10px;}
+      .hero-cta-fixed { width: 92vw; min-width: 0; font-size: 1.03rem; padding: 1rem 0;}
+    }
+    /* Остальные секции */
+    .section {
+      margin-top: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
     h2 {
       font-family: 'Montserrat', sans-serif;
       font-size: 2rem;
@@ -272,7 +341,6 @@
       box-shadow: 0 4px 16px rgba(255,111,97,0.18);
     }
     .centered { text-align: center; margin-bottom: 2.5rem; }
-
     .advantages-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -375,159 +443,6 @@
       font-size: 1rem;
     }
     .contacts-form button { width: 100%; }
-
-    .sergey-fab {
-      position: fixed;
-      right: 1.2rem;
-      bottom: 1.2rem;
-      z-index: 999;
-      background: #111;
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      width: 64px;
-      height: 44px;
-      min-width: 0;
-      min-height: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 12px 2px #FF6F61, 0 0 5px 1px #000;
-      cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.86rem;
-      gap: 0.4rem;
-      animation: fab-pop 1.2s cubic-bezier(.68,-0.55,.27,1.55);
-      outline: none;
-      filter: drop-shadow(0 0 6px #FF6F61aa);
-      padding: 0 0.5rem;
-      transition: box-shadow 0.23s, background 0.18s, transform 0.18s;
-    }
-    .sergey-fab:hover, .sergey-fab:focus {
-      box-shadow: 0 0 20px 6px #FF6F61, 0 0 10px 1px #000;
-      background: #222;
-      transform: scale(1.06);
-    }
-    .sergey-fab svg {
-      width: 28px;
-      height: 28px;
-      margin-bottom: 0.1rem;
-      filter: drop-shadow(0 0 4px #FF6F61cc) drop-shadow(0 0 2px #fff6);
-      flex-shrink: 0;
-    }
-    .sergey-fab span {
-      display: block;
-      text-align: left;
-      font-size: 0.77rem;
-      line-height: 1.13;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-    @keyframes fab-pop {
-      0% { transform: scale(0.5); opacity: 0; }
-      80% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(1); }
-    }
-    .footer {
-      width: 100%;
-      background: #16202a;
-      color: #cfd8dc;
-      padding: 2.2rem 0 1.2rem 0;
-    }
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.2rem;
-    }
-    .footer-logo {
-      font-family: 'Montserrat',sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--accent);
-    }
-    .footer-desc { font-size: 1.01rem; }
-    .footer-link { color: #fff; text-decoration: none; margin-right: 1.5rem; }
-    .footer-socials { display: flex; gap: 0.7rem; }
-    .footer-socials a {
-      color: #fff;
-      font-size: 1.15rem;
-      background: var(--accent);
-      border-radius: 50%;
-      width: 32px; height: 32px;
-      display: flex; align-items: center; justify-content: center;
-      text-decoration: none;
-      transition: background 0.18s;
-    }
-    .footer-socials a:hover { background: #ff3b2e;}
-    .footer-copy { color: #888; margin-left: 1.2rem; font-size: 0.95rem; }
-    #toTop {
-      position: fixed;
-      right: 1.3rem;
-      bottom: 80px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      font-size: 2rem;
-      box-shadow: 0 4px 16px rgba(255,111,97,0.18);
-      cursor: pointer;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.22s;
-      z-index: 900;
-      outline: none;
-    }
-    #toTop.visible {
-      opacity: 1;
-      pointer-events: all;
-    }
-    /* AOS Animations */
-    [data-aos] { opacity: 0; transition-property: opacity, transform; }
-    [data-aos].aos-animate { opacity: 1; }
-    @media (max-width: 900px) {
-      .main-nav {
-        flex-direction: row;
-        gap: 1rem;
-      }
-      .nav-list {
-        position: fixed;
-        top: 0; right: -100vw; width: 80vw; height: 100vh;
-        background: rgba(26,37,47,0.98);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-        transition: right 0.3s;
-        z-index: 200;
-        padding: 2.5rem 1.5rem;
-        box-shadow: 0 0 32px #0002;
-      }
-      .nav-list.open { right: 0; }
-      .burger { display: flex; }
-      .main-nav .nav-list > li { width: 100%; }
-      .main-nav .nav-list > li > a { width: 100%; }
-      .dropdown { position: static; box-shadow: none; background: none; }
-      .has-dropdown:hover .dropdown { display: none; }
-      .has-dropdown.open .dropdown { display: flex; }
-      .sergey-fab {
-        right: 0.7rem;
-        bottom: 0.7rem;
-        width: 58vw;
-        max-width: 130px;
-        height: 42px;
-        font-size: 0.82rem;
-        padding: 0 0.5rem;
-      }
-      .sergey-fab span {
-        font-size: 0.7rem;
-      }
-    }
     @media (max-width: 900px) {
       .project-cards { grid-template-columns: 1fr; }
       .advantages-grid { grid-template-columns: 1fr 1fr; }
@@ -535,10 +450,7 @@
       .footer-content { flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 600px) {
-      main { padding-top: 70px; }
-      .hero-content h1 { font-size: 1.3rem; }
       .advantages-grid { grid-template-columns: 1fr; }
-      .project-card img, .review-photo img { max-width: 100%; }
       .footer-content { gap: 0.5rem; }
       .footer-link, .footer-socials a { font-size: 1.1rem; }
       .contacts-form { padding: 1.2rem 0.5rem; }
@@ -574,19 +486,28 @@
   </header>
   <main>
     <section class="hero" id="hero">
-      <div class="hero-content" data-aos="fade-up">
-        <h1>Современные каркасные дома под ключ</h1>
-        <p>Строим энергоэффективные и уютные дома в Нижнем Новгороде и области. Гарантия, прозрачная смета, индивидуальный подход.</p>
-        <a href="projects.html" class="hero-cta">Смотреть проекты</a>
-        <a href="calc.html" class="hero-cta secondary">Рассчитать стоимость</a>
-      </div>
-      <div class="ceiling-effect">
-        <svg class="ceiling-svg" viewBox="0 0 1920 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 90C480 30 1440 150 1920 90V0H0V90Z" fill="#1a252f"/>
+      <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="images/hero-fallback.jpg">
+        <source src="https://www.dropbox.com/scl/fi/llhhw58f34rj8uocsgatp/.mp4?rlkey=d6q3cehq9qa74c6iiuykggzmz&st=8wojp0zm&raw=1" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+      <div class="hero-arch-wrapper">
+        <svg class="hero-arch-svg" viewBox="0 0 1500 180" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M50 170 Q750 -60 1450 170" stroke="#fff9" stroke-width="5" fill="none"/>
         </svg>
+        <div class="rainbow-arch-text">
+          Современные дома под ключ
+        </div>
       </div>
+      <div class="hero-content" data-aos="fade-up">
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+          Строим энергоэффективные и уютные дома в Нижнем Новгороде и области. Гарантия, прозрачная смета, индивидуальный подход.
+        </p>
+      </div>
+      <a href="calc.html" class="hero-cta-fixed">Рассчитать стоимость</a>
     </section>
-    <section id="projects">
+
+    <!-- Проекты -->
+    <section class="section" id="projects">
       <h2 data-aos="fade-up">Наши проекты</h2>
       <div class="project-cards">
         <a href="semeiny-40.html" class="project-card" data-aos="fade-up" data-aos-delay="50">
@@ -609,7 +530,8 @@
         <a href="projects.html" class="btn accent">Смотреть все проекты</a>
       </div>
     </section>
-    <section id="advantages">
+    <!-- Преимущества -->
+    <section class="section" id="advantages">
       <h2 data-aos="fade-up">Почему выбирают нас?</h2>
       <div class="advantages-grid">
         <div class="adv-card" data-aos="fade-up" data-aos-delay="50">
@@ -634,7 +556,8 @@
         </div>
       </div>
     </section>
-    <section id="calc">
+    <!-- Калькулятор -->
+    <section class="section" id="calc">
       <h2 data-aos="fade-up">Калькулятор стоимости</h2>
       <form class="calc-form" id="mainCalc" autocomplete="off" data-aos="fade-up" data-aos-delay="50">
         <label>Площадь дома (м²):
@@ -651,7 +574,8 @@
       </form>
       <div class="calc-result" id="mainCalcResult"></div>
     </section>
-    <section id="reviews">
+    <!-- Отзывы -->
+    <section class="section" id="reviews">
       <h2 data-aos="fade-up">Отзывы клиентов</h2>
       <div class="reviews-cards">
         <div class="review-card" data-aos="zoom-in" data-aos-delay="50">
@@ -676,7 +600,8 @@
         </div>
       </div>
     </section>
-    <section id="contacts">
+    <!-- Контакты -->
+    <section class="section" id="contacts">
       <h2 data-aos="fade-up">Связаться с нами</h2>
       <form action="https://getform.io/f/bmdmvjya" method="POST" class="contacts-form" data-aos="fade-up" data-aos-delay="50">
         <input type="text" name="name" placeholder="Ваше имя" required>
