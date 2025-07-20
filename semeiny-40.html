@@ -21,6 +21,8 @@
       --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
       --radius: 18px;
       --blur: blur(10px);
+      --btn-glow: 0 2px 8px #ff6f611a, 0 1.5px 2px #fff2, 0 2px 12px 0 #FF6F6160;
+      --btn-inner: linear-gradient(180deg, #ff8a7b 0%, #ff6f61 70%, #ff4b3d 100%);
     }
     html { box-sizing: border-box; }
     *, *:before, *:after { box-sizing: inherit; }
@@ -220,17 +222,42 @@
     }
     .project-info-actions {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       gap: 1.1rem;
       justify-content: flex-start;
       align-items: center;
       min-width: 220px;
+      flex-wrap: wrap;
     }
-    .project-info-actions .btn {
-      width: 100%;
-      font-size: 1.07rem;
-      padding: 0.8rem 0;
-      text-align: center;
+    .btn-style {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.98rem;
+      letter-spacing: 0.03em;
+      padding: 0.62rem 1.25rem;
+      border-radius: 1.5em;
+      background: var(--btn-inner);
+      color: #fff;
+      border: none;
+      box-shadow: var(--btn-glow), 0 2px 0 #b53a2d, 0 1.5px 2px #fff2;
+      cursor: pointer;
+      transition: background 0.17s, box-shadow 0.17s, transform 0.15s;
+      text-shadow: 0 1.5px 2px #b53a2d40, 0 0.5px 1px #fff8;
+      min-width: 128px;
+      margin-right: 0.2em;
+    }
+    .btn-style:active, .btn-style:focus {
+      transform: translateY(2px) scale(0.97);
+      box-shadow: 0 1.5px 6px #FF6F6160;
+    }
+    .btn-style:hover {
+      background: linear-gradient(180deg, #ffb2a1 0%, #ff6f61 85%, #ff4b3d 100%);
+      color: #fff;
+      box-shadow: 0 4px 18px #ff6f6180;
+      transform: scale(1.04);
     }
     .gallery-section {
       margin: 2.5rem 0;
@@ -429,6 +456,12 @@
         font-size: 0.7rem;
       }
       .gallery-grid { grid-template-columns: repeat(2, 1fr);}
+      .project-info-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.7rem;
+      }
+      .btn-style { min-width: 100px; }
     }
     @media (max-width: 600px) {
       main { padding-top: 70px; }
@@ -488,9 +521,9 @@
         <div class="project-info-price">от 1 640 000 ₽</div>
       </div>
       <div class="project-info-actions">
-        <a href="calc.html" class="btn accent">Рассчитать стоимость</a>
-        <a href="contacts.html" class="btn">Задать вопрос</a>
-        <a href="projects.html" class="btn">К другим проектам</a>
+        <a href="calc.html" class="btn-style">Рассчитать стоимость</a>
+        <a href="contacts.html" class="btn-style">Задать вопрос</a>
+        <a href="projects.html" class="btn-style">К другим проектам</a>
       </div>
     </section>
     <section class="gallery-section" id="gallery">
