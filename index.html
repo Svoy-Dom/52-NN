@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Свой дом НН — Современные каркасные дома в Нижнем Новгороде</title>
+  <meta name="description" content="Строительство современных каркасных домов под ключ в Нижнем Новгороде и области. Проекты от 30 до 40 м², энергоэффективные технологии, гарантия 5 лет. Фиксированная цена от 960 000 ₽.">
+  <meta name="keywords" content="каркасные дома, строительство домов, дома под ключ, Нижний Новгород, энергоэффективные дома, недорогие дома">
+  <meta name="author" content="Свой дом НН">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Свой дом НН — Современные каркасные дома в Нижнем Новгороде">
+  <meta property="og:description" content="Строительство современных каркасных домов под ключ в Нижнем Новгороде и области. Проекты от 30 до 40 м², энергоэффективные технологии, гарантия 5 лет.">
+  <meta property="og:image" content="https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png">
+  <meta property="og:url" content="https://svoy-dom-nn.ru/">
+  <meta name="theme-color" content="#1a252f">
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png">
+  <link rel="apple-touch-icon" href="https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #1a252f;
+      --bg-card: rgba(44, 62, 80, 0.7);
+      --text-main: #f5f6fa;
+      --accent: #FF6F61;
+      --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      --radius: 18px;
+      --blur: blur(10px);
+      --btn-glow: 0 8px 36px #ff6f6140, 0 2px 12px #fff2;
+      --btn-inner: linear-gradient(90deg, #FF6F61 40%, #FF8A7B 100%);
+    }
+    html { box-sizing: border-box; }
+    *, *:before, *:after { box-sizing: inherit; }
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 100;
+      background: rgba(26,37,47,0.95);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 1rem 0.5rem;
+      position: relative;
+    }
+    .nav-brand a {
+      color: var(--accent);
+      font-family: 'Montserrat',sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+      margin-right: 2rem;
+      letter-spacing: 0.04em;
+    }
+    .nav-list {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+      transition: right 0.3s;
+    }
+    .nav-list li { position: relative; }
+    .nav-list a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+      display: block;
+    }
+    .nav-list a.active, .nav-list a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 0.3em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      right: 1rem;
+      top: 1.1rem;
+      z-index: 300;
+    }
+    .burger span {
+      width: 28px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+      display: block;
+      transition: all 0.3s;
+    }
+    .has-dropdown .dropdown {
+      display: none;
+      position: absolute;
+      top: 2.6rem;
+      left: 0;
+      background: var(--bg-card);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      min-width: 150px;
+      flex-direction: column;
+      z-index: 120;
+      padding: 0.5rem 0;
+    }
+    .has-dropdown:hover .dropdown { display: flex; }
+    .dropdown a {
+      padding: 0.5rem 1.2rem;
+      font-size: 0.97rem;
+      color: var(--text-main);
+      border-radius: 0;
+    }
+    .dropdown a.active, .dropdown a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    main {
+      padding-top: 82px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background: none;
+    }
+    .hero-bg-video {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.62) saturate(1.25);
+      pointer-events: none;
+      background: #222;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+      padding-top: 20vh;
+    }
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 3.2rem;
+      color: #fff;
+      margin: 0 0 1.5rem;
+      line-height: 1.2;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      animation: fadeInUp 1.3s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+    }
+    .gradient-text {
+      background: linear-gradient(45deg, var(--accent), #ff8f87);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      position: relative;
+      animation: gradientShift 8s ease infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        filter: hue-rotate(0deg) brightness(100%);
+      }
+      50% {
+        filter: hue-rotate(15deg) brightness(110%);
+      }
+    }
+    .hero-subtitle {
+      color: #e1e6ed;
+      font-size: 1.22rem;
+      font-weight: 400;
+      margin-bottom: 2.5rem;
+      margin-top: 1.2rem;
+      opacity: 0;
+      max-width: 540px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      animation: slideInFromBottom 1.5s cubic-bezier(0.2, 0.7, 0.3, 1) 0.4s forwards;
+    }
+    @keyframes slideInFromBottom {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 0.92;
+        transform: translateY(0);
+      }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 15vh 1rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(28px);}
+      to   { opacity: 1; transform: none;}
+    }
+    @media (max-width: 900px) {
+      .hero-content { padding-top: 15vh; }
+      .hero-title { font-size: 2.4rem; }
+    }
+    @media (max-width: 600px) {
+      .hero-content { padding-top: 12vh; }
+      .hero-title { font-size: 2rem; }
+    }
+    /* Остальные секции */
+    .section {
+      margin-top: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: var(--text-main);
+      text-align: center;
+    }
+    .project-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: var(--blur);
+      padding: 1.2rem 1rem 1.5rem 1rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.18s, background 0.18s, transform 0.18s;
+      min-width: 0;
+    }
+    .project-card img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 12px;
+      margin-bottom: 0.8rem;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      background: #222;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    }
+    .project-card h3 {
+      font-family: 'Montserrat',sans-serif;
+      color: var(--accent);
+      margin: 0.6rem 0 0.2rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.18s, box-shadow 0.18s;
+      box-shadow: 0 2px 8px rgba(255,111,97,0.12);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn.accent { background: var(--accent); }
+    .btn:hover {
+      background: #ff3b2e;
+      box-shadow: 0 4px 16px rgba(255,111,97,0.18);
+    }
+    .centered { text-align: center; margin-bottom: 2.5rem; }
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .adv-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: var(--blur);
+      padding: 1.2rem 1rem 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 0;
+      text-align: center;
+    }
+    .adv-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .calc-form {
+      max-width: 420px;
+      margin: 0 auto 2.5rem auto;
+      background: var(--bg-card);
+      padding: 2rem 1rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: var(--blur);
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .calc-form label {
+      font-size: 1.02rem;
+      margin-bottom: 0.7rem;
+      color: #e1e6ed;
+    }
+    .calc-form input, .calc-form select {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      margin-top: 0.3rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .calc-result { text-align: center; font-size: 1.1rem; margin-bottom: 1.2rem; color: #fff; }
+    .reviews-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .review-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: var(--blur);
+      padding: 1.2rem 1rem 1.5rem 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .review-photo img {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #222;
+    }
+    .review-content {
+      flex: 1;
+    }
+    .review-content h3 {
+      margin: 0 0 0.2rem;
+      font-size: 1.1rem;
+      color: var(--accent);
+      font-family: 'Montserrat',sans-serif;
+    }
+    .review-rating span { color: gold; font-size: 1.1rem;}
+    .contacts-form {
+      max-width: 400px;
+      margin: 2rem auto 0 auto;
+      background: var(--bg-card);
+      padding: 2rem 1rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: var(--blur);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contacts-form input {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+    .contacts-form button { width: 100%; }
+    .contacts-form textarea {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      resize: vertical;
+      min-height: 80px;
+    }
+    #toTop {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      box-shadow: var(--btn-glow);
+      z-index: 99;
+    }
+    #toTop.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+    #toTop:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 38px #ff6f6188, 0 3px 12px #fff4;
+    }
+    .sergey-chat-btn {
+      position: fixed;
+      right: 32px;
+      bottom: 100px;
+      background: rgba(17, 17, 17, 0.95);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.08),
+                  0 0 30px rgba(255, 255, 255, 0.05),
+                  inset 0 0 15px rgba(255, 255, 255, 0.05);
+      z-index: 99;
+    }
+    .sergey-chat-btn.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .sergey-chat-btn:hover {
+      background: rgba(25, 25, 25, 0.98);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.12),
+                  0 0 35px rgba(255, 255, 255, 0.08),
+                  inset 0 0 20px rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+    .sergey-chat-btn img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    @media (max-width: 900px) {
+      .project-cards { grid-template-columns: 1fr; }
+      .advantages-grid { grid-template-columns: 1fr 1fr; }
+      .reviews-cards { grid-template-columns: 1fr; }
+      .footer-content { flex-direction: column; align-items: flex-start; }
+    }
+    .footer {
+      margin-top: 4rem;
+      padding: 2rem 1rem;
+      background: var(--bg-card);
+      backdrop-filter: var(--blur);
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--accent);
+    }
+    .footer-desc {
+      flex: 1;
+      min-width: 200px;
+      color: #e1e6ed;
+    }
+    .footer-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-link {
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link:hover {
+      color: var(--accent);
+    }
+    .footer-address {
+      margin: 0;
+      color: #e1e6ed;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+    }
+    .footer-socials a {
+      color: var(--text-main);
+      transition: color 0.2s;
+    }
+    .footer-socials a:hover {
+      color: var(--accent);
+    }
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      color: #e1e6ed;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .footer-copy a {
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-copy a:hover {
+      color: var(--accent);
+    }
+    @media (max-width: 600px) {
+      .advantages-grid { grid-template-columns: 1fr; }
+      .footer-content { gap: 1.5rem; }
+      .footer-socials { width: 100%; justify-content: center; }
+      .contacts-form { padding: 1.2rem 0.5rem; }
+      .calc-form { padding: 1.2rem 0.5rem; }
+      .review-card { flex-direction: column; align-items: flex-start; }
+      .footer-logo, .footer-desc { font-size: 0.98rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- header удалён по просьбе пользователя -->
+  <main>
+    <section class="hero" id="hero" style="position:relative;min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;">
+      <div class="hero-headings" style="position:relative;z-index:2;text-align:center;padding-top:3.5rem;max-width:700px;width:100%;margin:0 auto;">
+        <h1 class="hero-title typing-animation" style="font-size:2.5rem;line-height:1.15;margin-bottom:1.2rem;color:#fff;background:rgba(26,37,47,0.85);border-radius:14px;padding:0.7em 1em 0.7em 1.2em;box-shadow:0 4px 32px #0002;display:inline-block;">Современные <span class="gradient-text">каркасные дома</span> под ключ</h1>
+        <p class="hero-subtitle fadein-animation" style="font-size:1.25rem;color:#e1e6ed;background:rgba(26,37,47,0.7);border-radius:10px;padding:0.6em 1em 0.6em 1em;box-shadow:0 2px 16px #0001;max-width:95%;margin:0 auto;">Строим энергоэффективные и уютные дома в Нижнем Новгороде и области</p>
+      </div>
+      <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="images/hero-fallback.jpg" style="z-index:1;position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.55) blur(0.5px);">
+        <source src="https://www.dropbox.com/scl/fi/llhhw58f34rj8uocsgatp/.mp4?rlkey=d6q3cehq9qa74c6iiuykggzmz&st=8wojp0zm&raw=1" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+    </section>
+    .typing-animation {
+      display: inline-block;
+      border-right: 2px solid #FF6F61;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 2.2s steps(38, end), blink-caret 0.7s step-end infinite;
+      background: none;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #FF6F61; }
+    }
+    .fadein-animation {
+      opacity: 0;
+      animation: fadein 2.2s 2.2s forwards;
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    <!-- Проекты -->
+    <section class="section" id="projects">
+      <h2 data-aos="fade-up">Наши проекты</h2>
+      <div class="project-cards">
+        <a href="semeiny-40.html" class="project-card" data-aos="fade-up" data-aos-delay="50">
+          <img src="https://i.postimg.cc/1zqmWjSY/photo-5467372104157624625-x.jpg" alt="Семейный 40" loading="lazy">
+          <h3>Семейный 40</h3>
+          <p>40 м², две спальни, терраса. От 1.64 млн ₽</p>
+        </a>
+        <a href="minidom-36.html" class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424526_y.jpg?raw=true" alt="МиниДом 36" loading="lazy">
+          <h3>МиниДом 36</h3>
+          <p>36 м², спальня и терраса. От 1.48 млн ₽</p>
+        </a>
+        <a href="dom-kub-30.html" class="project-card" data-aos="fade-up" data-aos-delay="150">
+          <img src="https://i.postimg.cc/htSQ5xtq/photo-5467925983140117240-y.jpg" alt="Дом Куб 30" loading="lazy">
+          <h3>Дом Куб 30</h3>
+          <p>30 м², панорамные окна</p>
+        </a>
+      </div>
+      <div class="centered" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+        <a href="projects.html" class="btn accent">Смотреть все проекты</a>
+        <a href="technology.html" class="btn accent">Технологии</a>
+        <a href="contacts.html" class="btn accent">Контакты</a>
+      </div>
+    </section>
+    <!-- Преимущества -->
+    <section class="section" id="advantages">
+      <h2 data-aos="fade-up">Почему выбирают нас?</h2>
+      <div class="advantages-grid">
+        <div class="adv-card" data-aos="fade-up" data-aos-delay="50">
+          <span class="adv-icon">✅</span>
+          <h3>Гарантия 5 лет</h3>
+          <p>Официальная гарантия и договор. Контроль каждого этапа.</p>
+        </div>
+        <div class="adv-card" data-aos="fade-up" data-aos-delay="100">
+          <span class="adv-icon">📊</span>
+          <h3>Прозрачная смета</h3>
+          <p>Фиксированная цена, без скрытых расходов.</p>
+        </div>
+        <div class="adv-card" data-aos="fade-up" data-aos-delay="150">
+          <span class="adv-icon">🏗️</span>
+          <h3>Скорость</h3>
+          <p>Строительство под ключ за 2-4 месяца.</p>
+        </div>
+        <div class="adv-card" data-aos="fade-up" data-aos-delay="200">
+          <span class="adv-icon">💡</span>
+          <h3>Индивидуальный подход</h3>
+          <p>Адаптация проекта под ваш участок и задачи.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Калькулятор -->
+    <section class="section" id="calc">
+      <h2 data-aos="fade-up">Калькулятор стоимости</h2>
+      <form class="calc-form" id="mainCalc" autocomplete="off" data-aos="fade-up" data-aos-delay="50">
+        <label>Площадь дома (м²):
+          <input type="number" name="area" min="20" max="120" step="1" value="40" required>
+          <small style="display:block;margin-top:4px;color:#e1e6ed;">Рекомендуемая площадь: от 30 до 40 м²</small>
+        </label>
+        <label>Тип отделки:
+          <select name="finish">
+            <option value="econom">Эконом (базовая отделка)</option>
+            <option value="standard" selected>Стандарт (под ключ)</option>
+            <option value="premium">Премиум (дизайнерская)</option>
+          </select>
+        </label>
+        <label>
+          <input type="checkbox" name="terrace" checked>
+          Добавить террасу (+150 000 ₽)
+        </label>
+        <button type="submit" class="btn">Рассчитать стоимость</button>
+        <p style="margin:8px 0 0;font-size:0.9em;color:#e1e6ed;">* Финальная стоимость зависит от выбранного проекта и комплектации</p>
+      </form>
+      <div class="calc-result" id="mainCalcResult"></div>
+    </section>
+    <!-- Отзывы -->
+    <section class="section" id="reviews">
+      <h2 data-aos="fade-up">Отзывы клиентов</h2>
+      <div class="reviews-cards">
+        <div class="review-card" data-aos="zoom-in" data-aos-delay="50">
+          <div class="review-photo">
+            <img src="https://i.postimg.cc/1zqmWjSY/photo-5467372104157624625-x.jpg" alt="Мария, заказчик">
+          </div>
+          <div class="review-content">
+            <h3>Мария</h3>
+            <p>«Спасибо за дом! Всё прозрачно и быстро, уже живём, очень довольны!»</p>
+            <div class="review-rating"><span>★★★★★</span></div>
+          </div>
+        </div>
+        <div class="review-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="review-photo">
+            <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424526_y.jpg?raw=true" alt="Владимир, заказчик">
+          </div>
+          <div class="review-content">
+            <h3>Владимир</h3>
+            <p>«Отличная команда! Помогли выбрать проект, всё по договору и без задержек.»</p>
+            <div class="review-rating"><span>★★★★★</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Контакты -->
+    <section class="section" id="contacts">
+      <h2 data-aos="fade-up">Связаться с нами</h2>
+      <form action="https://getform.io/f/bmdmvjya" method="POST" class="contacts-form" data-aos="fade-up" data-aos-delay="50">
+        <input type="text" name="name" placeholder="Ваше имя" required minlength="2" pattern="[А-Яа-яЁё\s-]{2,50}" title="Введите имя кириллицей">
+        <input type="tel" name="phone" placeholder="Телефон" required pattern="[\+7|8]\s?\(?[0-9]{3}\)?\s?[0-9]{3}[-\s]?[0-9]{2}[-\s]?[0-9]{2}" title="Введите телефон в формате +7 (920) 000-00-00">
+        <input type="email" name="email" placeholder="Email (необязательно)">
+        <textarea name="message" placeholder="Ваш вопрос или комментарий" rows="3"></textarea>
+        <input type="text" name="_gotcha" style="display:none">
+        <label style="font-size:0.9em;color:#e1e6ed;">
+          <input type="checkbox" name="agree" required>
+          Согласен на обработку персональных данных
+        </label>
+        <button type="submit" class="btn accent">Отправить заявку</button>
+      </form>
+    </section>
+  </main>
+  <!-- Кнопка чата с прорабом -->
+  <button class="sergey-chat-btn" onclick="openSergeyChat()" aria-label="Чат с прорабом">
+    <img src="https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png" alt="Прораб Сергей">
+    <span>Задать вопрос прорабу</span>
+  </button>
+  <footer class="footer">
+    <div class="footer-content">
+      <span class="footer-logo">Свой дом НН</span>
+      <span class="footer-desc">Современные каркасные дома с высокими сводчатыми потолками</span>
+      <div class="footer-contacts">
+        <a href="tel:+79200000000" class="footer-link">+7 (920) 000-00-00</a>
+        <a href="mailto:info@svoy-dom-nn.ru" class="footer-link">info@svoy-dom-nn.ru</a>
+        <p class="footer-address">г. Нижний Новгород, ул. Строителей, 10</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://wa.me/79200000000" target="_blank" rel="noopener" aria-label="WhatsApp" title="Написать в WhatsApp">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+        </a>
+        <a href="https://vk.com/svoydomnn" target="_blank" rel="noopener" aria-label="VK" title="Мы ВКонтакте">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.565-1.765-1.602-.313-3.486 1.801-2.339 4.157-5.336 2.073-5.336h-3.981c-.772 0-.828.435-1.103 1.083-.995 2.347-2.886 5.387-3.604 4.922-.751-.485-.407-2.406-.35-5.261.015-.754.011-1.271-1.141-1.539-.629-.145-1.241-.205-1.809-.205-2.273 0-3.841.953-2.95 1.119 1.571.293 1.42 3.692 1.054 5.16-.638 2.556-3.036-2.024-4.035-4.305-.241-.548-.315-.974-1.175-.974h-3.255c-.492 0-.787.16-.787.516 0 .602 2.96 6.72 5.786 9.77 2.756 2.975 5.48 2.708 7.376 2.708z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/c/svoydomnn" target="_blank" rel="noopener" aria-label="YouTube" title="Наш YouTube канал">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+        </a>
+      </div>
+      <span class="footer-copy">© 2023-2025 Свой дом НН | <a href="/privacy.html">Политика конфиденциальности</a></span>
+    </div>
+  </footer>
+  <button id="toTop" aria-label="Наверх" title="Наверх">↑</button>
+  <!-- Chatbase Sergey scripts -->
+  <script>
+    function openSergeyChat() {
+        const btn = document.querySelector('.sergey-chat-btn');
+        btn.style.transform = 'scale(0.95)';
+        setTimeout(() => btn.style.transform = '', 150);
+
+        if (window.chatbase && typeof window.chatbase.openChat === 'function') {
+            window.chatbase.openChat();
+        } else {
+            const msg = "Здравствуйте! Я прораб Сергей. Готов ответить на ваши вопросы о строительстве. Чат загружается...";
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 160px;
+                right: 32px;
+                background: rgba(17, 17, 17, 0.95);
+                color: #fff;
+                padding: 16px 20px;
+                border-radius: 12px;
+                max-width: 300px;
+                font-size: 14px;
+                z-index: 1000;
+                animation: fadeIn 0.3s ease;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+            `;
+            notification.textContent = msg;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+    }
+  </script>
+  <script>
+    (function(){
+      if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+        window.chatbase=(...arguments)=>{
+          if(!window.chatbase.q){window.chatbase.q=[]}
+          window.chatbase.q.push(arguments)
+        };
+        window.chatbase=new Proxy(window.chatbase,{get(target,prop){
+          if(prop==="q"){return target.q}
+          return(...args)=>target(prop,...args)}
+        })
+      }
+      const onLoad=function(){
+        const script=document.createElement("script");
+        script.src="https://www.chatbase.co/embed.min.js";
+        script.id="elEbjas8v3UayyJoEx6Fq";
+        script.domain="www.chatbase.co";
+        document.body.appendChild(script)
+      };
+      if(document.readyState==="complete"){onLoad()}
+      else{window.addEventListener("load",onLoad)}
+    })();
+  </script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 700, offset: 80 });
+    // Бургер-меню
+    document.querySelector('.burger').addEventListener('click', function() {
+      document.querySelector('.nav-list').classList.toggle('open');
+      this.classList.toggle('open');
+    });
+    // Закрытие меню при клике на пункт на мобилке (улучшение UX)
+    document.querySelectorAll('.nav-list a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if(window.innerWidth < 900) {
+          document.querySelector('.nav-list').classList.remove('open');
+          document.querySelector('.burger').classList.remove('open');
+        }
+      });
+    });
+    // Маска для телефона
+    document.querySelectorAll('input[type="tel"]').forEach(function(input) {
+      input.addEventListener('input', function(e) {
+        let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+        e.target.value = !x[2] ? x[1] : '+7 (' + x[2] + ') ' + (x[3] ? x[3] + (x[4] ? '-' + x[4] + (x[5] ? '-' + x[5] : '') : '') : '');
+      });
+    });
+
+    // Калькулятор
+    document.getElementById('mainCalc').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const area = +this.area.value || 40;
+      const finish = this.finish.value;
+      const hasTerrace = this.terrace.checked;
+      
+      let pricePerM2 = finish === "econom" ? 32000 : finish === "standard" ? 41000 : 57000;
+      let total = area * pricePerM2;
+      if(hasTerrace) total += 150000;
+
+      const monthly = Math.round(total / 36); // Примерный платеж по ипотеке на 3 года
+      
+      document.getElementById('mainCalcResult').innerHTML = `
+        <b>Ориентировочная стоимость:</b><br>
+        <span style="color:var(--accent);font-size:1.3em;display:block;margin:8px 0;">${total.toLocaleString('ru-RU')} ₽</span>
+        <small style="color:#e1e6ed;">
+          В ипотеку от ${monthly.toLocaleString('ru-RU')} ₽/мес<br>
+          Первоначальный взнос от ${Math.round(total * 0.15).toLocaleString('ru-RU')} ₽
+        </small>
+      `;
+    });
+    // Кнопка наверх и кнопка чата
+    window.addEventListener('scroll', function() {
+      const toTopBtn = document.getElementById('toTop');
+      const chatBtn = document.querySelector('.sergey-chat-btn');
+      
+      if (window.scrollY > 300) {
+        toTopBtn.classList.add('visible');
+        chatBtn.classList.add('visible');
+      } else {
+        toTopBtn.classList.remove('visible');
+        chatBtn.classList.remove('visible');
+      }
+    });
+    
+    document.getElementById('toTop').addEventListener('click', function() {
+      window.scrollTo({top:0,behavior:"smooth"});
+    });
+  </script>
+</body>
+</html>
