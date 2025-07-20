@@ -6,10 +6,8 @@
     <title>Свой дом НН | Современные каркасные дома в Нижнем Новгороде</title>
     <meta name="description" content="Проектируем и строим стильные каркасные дома с высокими сводчатыми потолками. Проекты «Семейный 40», «МиниДом 36» и «Дом Куб 30». Узнайте стоимость!">
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     
-    <!-- AOS Animation Library -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     
     <style>
@@ -101,12 +99,22 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: url('https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             text-align: center;
+            overflow: hidden; /* Добавлено для скрытия выходящих частей видео */
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Заполняет все пространство без искажений */
+            z-index: -1; /* Помещает видео за контентом */
         }
         
         .hero-content h1 {
@@ -228,6 +236,44 @@
             color: #d0d0d0;
         }
         
+        /* Calculator Section */
+        .calculator-section {
+            text-align: center;
+        }
+        .calculator-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .form-group label {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: #d0d0d0;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: #2c3e50;
+            border: 1px solid #4f5a65;
+            border-radius: 5px;
+            color: #f5f6fa;
+            font-size: 1rem;
+        }
+        #total-cost {
+            margin-top: 30px;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 700;
+            color: #FF6F61;
+            min-height: 50px;
+        }
+        
         /* Sergey FAB */
         .sergey-fab {
             position: fixed;
@@ -250,7 +296,7 @@
             cursor: pointer;
             font-size: 0.7rem;
             text-align: center;
-        }
+}
         
         .sergey-fab:hover {
             transform: scale(1.1);
@@ -288,7 +334,8 @@
             .project-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
-}
+
+            }
             
             .sergey-fab {
                 width: 60px;
@@ -305,7 +352,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Свой дом НН</div>
@@ -324,15 +370,17 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://www.dropbox.com/scl/fi/llhhw58f34rj8uocsgatp/.mp4?rlkey=d6q3cehq9qa74c6iiuykggzmz&st=173gam4a&dl=1" type="video/mp4">
+            Ваш браузер не поддерживает тэг video.
+        </video>
         <div class="hero-content" data-aos="fade-up">
             <h1>Пространство. Свет. Ваш Дом.</h1>
             <p>Проектируем и строим современные каркасные дома с высокими, сводчатыми потолками.</p>
         </div>
     </section>
 
-    <!-- Philosophy Section -->
     <section class="section section-dark">
         <div class="container">
             <h2 data-aos="fade-up">Эконом — не значит компромисс в эстетике</h2>
@@ -342,7 +390,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section class="section section-light">
         <div class="container">
             <h2 data-aos="fade-up">Наши проекты</h2>
@@ -352,7 +399,7 @@
                     <div class="card-content">
                         <h3>Семейный 40</h3>
                         <p>Уютный дом площадью 40 м² с двумя спальнями и просторной кухней-гостиной. Идеальное решение для молодой семьи с ребенком.</p>
-                        <a href="semeiny-40.html" class="btn">Подробнее</a>
+<a href="semeiny-40.html" class="btn">Подробнее</a>
                     </div>
                 </div>
                 
@@ -376,7 +423,7 @@
             </div>
         </div>
     </section>
-<!-- Individual Design Section -->
+
     <section class="section section-dark">
         <div class="container">
             <div class="individual-design">
@@ -390,13 +437,29 @@
             </div>
         </div>
     </section>
+    
+    <section id="calculator" class="section section-light">
+        <div class="container calculator-section">
+            <h2 data-aos="fade-up">Калькулятор стоимости</h2>
+            <div class="calculator-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="form-group">
+                    <label for="house-area">Площадь дома (м²)</label>
+                    <input type="number" id="house-area" placeholder="Например: 50">
+                </div>
+                <div class="form-group">
+                    <label for="terrace-area">Площадь террасы (м²) - необязательно</label>
+                    <input type="number" id="terrace-area" placeholder="Например: 15">
+                </div>
+                <button id="calculate-btn" class="btn">Рассчитать стоимость</button>
+                <div id="total-cost"></div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Sergey FAB -->
     <button class="sergey-fab" onclick="window.chatbase?.openChat()">
         Сергей<br>Прораб
     </button>
 
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         // Initialize AOS
@@ -412,8 +475,7 @@
         mobileMenu.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
-
-        // Navbar scroll effect
+// Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -429,9 +491,34 @@
                 navMenu.classList.remove('active');
             });
         });
+
+        // Calculator Logic
+        const calculateBtn = document.getElementById('calculate-btn');
+        calculateBtn.addEventListener('click', () => {
+            const houseArea = parseFloat(document.getElementById('house-area').value) || 0;
+            const terraceArea = parseFloat(document.getElementById('terrace-area').value) || 0;
+
+            const housePricePerSqm = 80000;
+            const terracePricePerSqm = 3500;
+
+            if (houseArea <= 0) {
+                document.getElementById('total-cost').innerText = 'Введите площадь дома';
+                return;
+            }
+
+            const totalCost = (houseArea * housePricePerSqm) + (terraceArea * terracePricePerSqm);
+            
+            const formattedCost = totalCost.toLocaleString('ru-RU', {
+                style: 'currency',
+                currency: 'RUB',
+                minimumFractionDigits: 0
+            });
+
+            document.getElementById('total-cost').innerText = Ориентировочная стоимость: ${formattedCost};
+        });
+
     </script>
 
-    <!-- Chatbase Integration -->
     <script>
         window.embeddedChatbotConfig = {
             chatbotId: "elEbjas8v3UayyJoEx6Fq",
