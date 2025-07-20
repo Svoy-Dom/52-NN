@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://svoy-dom-nn.ru/sitemap.xml
