@@ -27,8 +27,6 @@
       --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
       --radius: 18px;
       --blur: blur(10px);
-      --btn-glow: 0 8px 36px #ff6f6140, 0 2px 12px #fff2;
-      --btn-inner: linear-gradient(90deg, #FF6F61 40%, #FF8A7B 100%);
     }
     html { box-sizing: border-box; }
     *, *:before, *:after { box-sizing: inherit; }
@@ -39,108 +37,6 @@
       color: var(--text-main);
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
-      scroll-behavior: smooth;
-    }
-    header {
-      width: 100%;
-      position: fixed;
-      top: 0; left: 0;
-      z-index: 100;
-      background: rgba(26,37,47,0.95);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(6px);
-    }
-    .main-nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      padding: 1rem 0.5rem;
-      position: relative;
-    }
-    .nav-brand a {
-      color: var(--accent);
-      font-family: 'Montserrat',sans-serif;
-      font-weight: 700;
-      font-size: 1.25rem;
-      text-decoration: none;
-      margin-right: 2rem;
-      letter-spacing: 0.04em;
-    }
-    .nav-list {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      align-items: center;
-      transition: right 0.3s;
-    }
-    .nav-list li { position: relative; }
-    .nav-list a {
-      color: var(--text-main);
-      text-decoration: none;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.04em;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      transition: background 0.2s, color 0.2s;
-      display: block;
-    }
-    .nav-list a.active, .nav-list a:hover {
-      background: var(--accent);
-      color: #fff;
-    }
-    .burger {
-      display: none;
-      flex-direction: column;
-      gap: 0.3em;
-      background: none;
-      border: none;
-      cursor: pointer;
-      position: absolute;
-right: 1rem;
-      top: 1.1rem;
-      z-index: 300;
-    }
-    .burger span {
-      width: 28px;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 2px;
-      display: block;
-      transition: all 0.3s;
-    }
-    .has-dropdown .dropdown {
-      display: none;
-      position: absolute;
-      top: 2.6rem;
-      left: 0;
-      background: var(--bg-card);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      min-width: 150px;
-      flex-direction: column;
-      z-index: 120;
-      padding: 0.5rem 0;
-    }
-    .has-dropdown:hover .dropdown { display: flex; }
-    .dropdown a {
-      padding: 0.5rem 1.2rem;
-      font-size: 0.97rem;
-      color: var(--text-main);
-      border-radius: 0;
-    }
-    .dropdown a.active, .dropdown a:hover {
-      background: var(--accent);
-      color: #fff;
-    }
-    main {
-      padding-top: 82px;
-      max-width: 1200px;
-      margin: 0 auto;
     }
     /* HERO SECTION - REWORKED */
     .hero {
@@ -200,232 +96,22 @@ right: 1rem;
     }
     @keyframes blink-caret {
         from, to { border-color: transparent }
-        50% { border-color: var(--accent); }
+50% { border-color: var(--accent); }
     }
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
     
-    /* Остальные секции */
-    .section {
-      margin-top: 3.5rem;
-      margin-bottom: 3.5rem;
-    }
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-      color: var(--text-main);
-      text-align: center;
-    }
-    .project-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
-    }
-    .project-card {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: var(--blur);
-      padding: 1.2rem 1rem 1.5rem 1rem;
-      text-align: center;
-      text-decoration: none;
-      color: var(--text-main);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: box-shadow 0.18s, background 0.18s, transform 0.18s;
-      min-width: 0;
-    }
-    .project-card img {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 12px;
-      margin-bottom: 0.8rem;
-      object-fit: cover;
-      aspect-ratio: 4/3;
-background: #222;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-    }
-    .project-card h3 {
-      font-family: 'Montserrat',sans-serif;
-      color: var(--accent);
-      margin: 0.6rem 0 0.2rem;
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-    .btn {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 0.7rem 1.5rem;
-      font-size: 1rem;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.18s, box-shadow 0.18s;
-      box-shadow: 0 2px 8px rgba(255,111,97,0.12);
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn.accent { background: var(--accent); }
-    .btn:hover {
-      background: #ff3b2e;
-      box-shadow: 0 4px 16px rgba(255,111,97,0.18);
-    }
-    .centered { text-align: center; margin-bottom: 2.5rem; }
-    .advantages-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
-    }
-    .adv-card {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: var(--blur);
-      padding: 1.2rem 1rem 1.5rem 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 0;
-      text-align: center;
-    }
-    .adv-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-    .calc-form {
-      max-width: 420px;
-      margin: 0 auto 2.5rem auto;
-      background: var(--bg-card);
-      padding: 2rem 1rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: var(--blur);
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-    .calc-form label {
-      font-size: 1.02rem;
-      margin-bottom: 0.7rem;
-      color: #e1e6ed;
-    }
-    .calc-form input, .calc-form select {
-      width: 100%;
-      padding: 0.7rem 1rem;
-      margin-top: 0.3rem;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-    }
-    .calc-result { text-align: center; font-size: 1.1rem; margin-bottom: 1.2rem; color: #fff; }
-    .reviews-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
-    }
-    .review-card {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: var(--blur);
-      padding: 1.2rem 1rem 1.5rem 1rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-    .review-photo img {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      object-fit: cover;
-      background: #222;
-    }
-    .review-content {
-      flex: 1;
-    }
-    .review-content h3 {
-      margin: 0 0 0.2rem;
-      font-size: 1.1rem;
-      color: var(--accent);
-      font-family: 'Montserrat',sans-serif;
-    }
-    .review-rating span { color: gold; font-size: 1.1rem;}
-    .contacts-form {
-      max-width: 400px;
-      margin: 2rem auto 0 auto;
-      background: var(--bg-card);
-      padding: 2rem 1rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: var(--blur);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .contacts-form input {
-      width: 100%;
-      padding: 0.7rem 1rem;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-    }
-    .contacts-form button { width: 100%; }
-    .contacts-form textarea {
-      width: 100%;
-      padding: 0.7rem 1rem;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-      resize: vertical;
-      min-height: 80px;
-    }
-    #toTop {
-      position: fixed;
-      bottom: 32px;
-      right: 32px;
-      width: 48px;
-      height: 48px;
-background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      font-size: 24px;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px);
-      transition: all 0.3s ease;
-      box-shadow: var(--btn-glow);
-      z-index: 99;
-    }
-    #toTop.visible {
-      opacity: 1;
-      visibility: visible;
-      transform: none;
-    }
-    #toTop:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 38px #ff6f6188, 0 3px 12px #fff4;
-    }
+    /* SERGEY CHAT BUTTON - REWORKED */
     .sergey-chat-btn {
       position: fixed;
       right: 24px;
-      bottom: 24px; /* Изменено для лучшего расположения */
+      bottom: -100px; /* Начальное положение за экраном */
       background: var(--accent);
       color: #fff;
       padding: 12px;
-      border-radius: 50%; /* Сделано круглым */
+      border-radius: 50%;
       width: 64px;
       height: 64px;
       display: flex;
@@ -436,8 +122,15 @@ background: var(--accent);
       cursor: pointer;
       box-shadow: 0 0 20px rgba(255, 111, 97, 0.4), 0 0 10px #000;
       z-index: 999;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: fab-pop 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: fab-pop 1.5s cubic-bezier(.68,-0.55,.27,1.55) 1s; /* Анимация появления с задержкой */
+      opacity: 0;
+      visibility: hidden;
+    }
+    .sergey-chat-btn.visible {
+        bottom: 24px;
+        opacity: 1;
+        visibility: visible;
     }
     .sergey-chat-btn:hover {
         transform: scale(1.1);
@@ -463,93 +156,13 @@ background: var(--accent);
       .sergey-chat-btn span { display: none; }
       .sergey-chat-btn { width: 56px; height: 56px; }
       .sergey-chat-btn img { width: 28px; height: 28px; }
-    }
-    @media (max-width: 900px) {
-      .project-cards { grid-template-columns: 1fr; }
-      .advantages-grid { grid-template-columns: 1fr 1fr; }
-      .reviews-cards { grid-template-columns: 1fr; }
-      .footer-content { flex-direction: column; align-items: flex-start; }
-    }
-    .footer {
-      margin-top: 4rem;
-      padding: 2rem 1rem;
-      background: var(--bg-card);
-      backdrop-filter: var(--blur);
-    }
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2rem;
-    }
-    .footer-logo {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: var(--accent);
-    }
-    .footer-desc {
-      flex: 1;
-      min-width: 200px;
-      color: #e1e6ed;
-    }
-    .footer-contacts {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .footer-link {
-      color: var(--text-main);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-link:hover {
-      color: var(--accent);
-    }
-    .footer-address {
-      margin: 0;
-      color: #e1e6ed;
-    }
-    .footer-socials {
-      display: flex;
-      gap: 1rem;
-    }
-    .footer-socials a {
-      color: var(--text-main);
-      transition: color 0.2s;
-    }
-    .footer-socials a:hover {
-      color: var(--accent);
-    }
-    .footer-copy {
-      width: 100%;
-      text-align: center;
-      color: #e1e6ed;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-    }
-    .footer-copy a {
-      color: var(--text-main);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-copy a:hover {
-      color: var(--accent);
-    }
-    @media (max-width: 600px) {
-      .advantages-grid { grid-template-columns: 1fr; }
-      .footer-content { gap: 1.5rem; }
-      .footer-socials { width: 100%; justify-content: center; }
-      .contacts-form { padding: 1.2rem 0.5rem; }
-.calc-form { padding: 1.2rem 0.5rem; }
-      .review-card { flex-direction: column; align-items: flex-start; }
-      .footer-logo, .footer-desc { font-size: 0.98rem; }
+      .hero-title { font-size: 2.4rem; }
+      .hero-subtitle { font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
+
   <main>
     <section class="hero" id="hero">
       <video class="hero-bg-video" autoplay muted loop playsinline preload="auto">
@@ -563,16 +176,55 @@ background: var(--accent);
         </p>
       </div>
     </section>
-    </main>
+  </main>
   
   <button class="sergey-chat-btn" onclick="openSergeyChat()" aria-label="Чат с прорабом">
     <img src="https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png" alt="Прораб Сергей">
-    <span>Задать вопрос</span>
+    <span>Сергей</span>
   </button>
   
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ once: true, duration: 700, offset: 80 });
+    function openSergeyChat() {
+        if (window.chatbase && typeof window.chatbase.openChat === 'function') {
+            window.chatbase.openChat();
+        } else {
+            alert("Здравствуйте! Я прораб Сергей. Чат загружается...");
+        }
+    }
+    
+    // Плавное появление кнопки чата после загрузки
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const chatBtn = document.querySelector('.sergey-chat-btn');
+            if (chatBtn) {
+                chatBtn.classList.add('visible');
+            }
+        }, 500); // Появление через 0.5 секунды после загрузки страницы
+    });
+  </script>
+  
+  <script>
+    (function(){
+      if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+        window.chatbase=(...arguments)=>{
+          if(!window.chatbase.q){window.chatbase.q=[]}
+          window.chatbase.q.push(arguments)
+        };
+        window.chatbase=new Proxy(window.chatbase,{get(target,prop){
+          if(prop==="q"){return target.q}
+          return(...args)=>target(prop,...args)}
+        })
+}
+      const onLoad=function(){
+        const script=document.createElement("script");
+        script.src="https://www.chatbase.co/embed.min.js";
+        script.id="elEbjas8v3UayyJoEx6Fq";
+        script.domain="www.chatbase.co";
+        document.body.appendChild(script)
+      };
+      if(document.readyState==="complete"){onLoad()}
+      else{window.addEventListener("load",onLoad)}
+    })();
   </script>
 </body>
 </html>
