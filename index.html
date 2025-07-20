@@ -7,9 +7,9 @@
   <meta name="description" content="Каркасные дома под ключ: проекты, цены, технологии. Построим дом вашей мечты в Нижнем Новгороде и области.">
   <meta property="og:title" content="Свой дом НН — Современные каркасные дома">
   <meta property="og:description" content="Каркасные дома под ключ: проекты, цены, технологии. Построим дом вашей мечты в Нижнем Новгороде и области.">
-  <meta property="og:image" content="images/og-main.jpg">
+  <meta property="og:image" content="https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png">
   <meta name="theme-color" content="#1a252f">
-  <link rel="icon" href="images/favicon.svg">
+  <link rel="icon" href="https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
@@ -143,17 +143,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      background: url('https://i.postimg.cc/dtdMVQBt/5b4c9b6e-9b7d-43b3-b257-39722a15280c.png') center center/cover no-repeat;
     }
     .hero-bg-video {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      min-width: 100vw;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: 0;
-      filter: brightness(0.6) saturate(1.2);
-      pointer-events: none;
-      background: #222;
+      display: none !important;
     }
     .hero-content,
     .ceiling-effect {
@@ -391,34 +384,45 @@
       background: #111;
       color: #fff;
       border: none;
-      border-radius: 50%;
-      width: 68px;
-      height: 68px;
+      border-radius: 12px;
+      width: 64px;
+      height: 44px;
+      min-width: 0;
+      min-height: 0;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 18px 2px #FF6F61, 0 0 10px 1px #000;
+      box-shadow: 0 0 12px 2px #FF6F61, 0 0 5px 1px #000;
       cursor: pointer;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 0.95rem;
-      transition: box-shadow 0.23s, background 0.18s, transform 0.18s;
-      gap: 0.2rem;
+      font-size: 0.86rem;
+      gap: 0.4rem;
       animation: fab-pop 1.2s cubic-bezier(.68,-0.55,.27,1.55);
       outline: none;
-      filter: drop-shadow(0 0 8px #FF6F61aa);
+      filter: drop-shadow(0 0 6px #FF6F61aa);
+      padding: 0 0.5rem;
+      transition: box-shadow 0.23s, background 0.18s, transform 0.18s;
     }
     .sergey-fab:hover, .sergey-fab:focus {
-      box-shadow: 0 0 30px 10px #FF6F61, 0 0 15px 2px #000;
+      box-shadow: 0 0 20px 6px #FF6F61, 0 0 10px 1px #000;
       background: #222;
-      transform: scale(1.08);
+      transform: scale(1.06);
     }
     .sergey-fab svg {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       margin-bottom: 0.1rem;
       filter: drop-shadow(0 0 4px #FF6F61cc) drop-shadow(0 0 2px #fff6);
+      flex-shrink: 0;
+    }
+    .sergey-fab span {
+      display: block;
+      text-align: left;
+      font-size: 0.77rem;
+      line-height: 1.13;
+      font-weight: 700;
+      letter-spacing: 0.01em;
     }
     @keyframes fab-pop {
       0% { transform: scale(0.5); opacity: 0; }
@@ -487,7 +491,6 @@
     /* AOS Animations */
     [data-aos] { opacity: 0; transition-property: opacity, transform; }
     [data-aos].aos-animate { opacity: 1; }
-    /* Адаптация для мобильных */
     @media (max-width: 900px) {
       .main-nav {
         flex-direction: row;
@@ -512,6 +515,18 @@
       .dropdown { position: static; box-shadow: none; background: none; }
       .has-dropdown:hover .dropdown { display: none; }
       .has-dropdown.open .dropdown { display: flex; }
+      .sergey-fab {
+        right: 0.7rem;
+        bottom: 0.7rem;
+        width: 58vw;
+        max-width: 130px;
+        height: 42px;
+        font-size: 0.82rem;
+        padding: 0 0.5rem;
+      }
+      .sergey-fab span {
+        font-size: 0.7rem;
+      }
     }
     @media (max-width: 900px) {
       .project-cards { grid-template-columns: 1fr; }
@@ -541,11 +556,11 @@
       <ul class="nav-list">
         <li><a href="index.html" class="active">Главная</a></li>
         <li class="has-dropdown">
-          <a href="projects/index.html">Проекты</a>
+          <a href="projects.html">Проекты</a>
           <ul class="dropdown">
-            <li><a href="projects/semeiny-40.html">Семейный 40</a></li>
-            <li><a href="projects/minidom-36.html">МиниДом 36</a></li>
-            <li><a href="projects/dom-kub-30.html">Дом Куб 30</a></li>
+            <li><a href="semeiny-40.html">Семейный 40</a></li>
+            <li><a href="minidom-36.html">МиниДом 36</a></li>
+            <li><a href="dom-kub-30.html">Дом Куб 30</a></li>
             <li><a href="projects.html">Все проекты</a></li>
           </ul>
         </li>
@@ -553,21 +568,17 @@
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="reviews.html">Отзывы</a></li>
         <li><a href="blog.html">Блог</a></li>
-        <li><a href="#contacts">Контакты</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <section class="hero" id="hero">
-      <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="images/hero-fallback.jpg">
-        <source src="https://www.dropbox.com/scl/fi/llhhw58f34rj8uocsgatp/.mp4?rlkey=d6q3cehq9qa74c6iiuykggzmz&st=8wojp0zm&raw=1" type="video/mp4">
-        Ваш браузер не поддерживает видео.
-      </video>
       <div class="hero-content" data-aos="fade-up">
         <h1>Современные каркасные дома под ключ</h1>
         <p>Строим энергоэффективные и уютные дома в Нижнем Новгороде и области. Гарантия, прозрачная смета, индивидуальный подход.</p>
-        <a href="#projects" class="hero-cta">Смотреть проекты</a>
-        <a href="#calc" class="hero-cta secondary">Рассчитать стоимость</a>
+        <a href="projects.html" class="hero-cta">Смотреть проекты</a>
+        <a href="calc.html" class="hero-cta secondary">Рассчитать стоимость</a>
       </div>
       <div class="ceiling-effect">
         <svg class="ceiling-svg" viewBox="0 0 1920 90" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -578,18 +589,18 @@
     <section id="projects">
       <h2 data-aos="fade-up">Наши проекты</h2>
       <div class="project-cards">
-        <a href="projects/semeiny-40.html" class="project-card" data-aos="fade-up" data-aos-delay="50">
-          <img src="images/semeiny-40-thumb.jpg" alt="Семейный 40">
+        <a href="semeiny-40.html" class="project-card" data-aos="fade-up" data-aos-delay="50">
+          <img src="https://i.postimg.cc/1zqmWjSY/photo-5467372104157624625-x.jpg" alt="Семейный 40">
           <h3>Семейный 40</h3>
           <p>40 м², две спальни, терраса</p>
         </a>
-        <a href="projects/minidom-36.html" class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <img src="images/minidom-36-thumb.jpg" alt="МиниДом 36">
+        <a href="minidom-36.html" class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424526_y.jpg?raw=true" alt="МиниДом 36">
           <h3>МиниДом 36</h3>
           <p>36 м², спальня и терраса</p>
         </a>
-        <a href="projects/dom-kub-30.html" class="project-card" data-aos="fade-up" data-aos-delay="150">
-          <img src="images/dom-kub-30-thumb.jpg" alt="Дом Куб 30">
+        <a href="dom-kub-30.html" class="project-card" data-aos="fade-up" data-aos-delay="150">
+          <img src="https://i.postimg.cc/htSQ5xtq/photo-5467925983140117240-y.jpg" alt="Дом Куб 30">
           <h3>Дом Куб 30</h3>
           <p>30 м², панорамные окна</p>
         </a>
@@ -645,7 +656,7 @@
       <div class="reviews-cards">
         <div class="review-card" data-aos="zoom-in" data-aos-delay="50">
           <div class="review-photo">
-            <img src="images/review1.jpg" alt="Мария, заказчик">
+            <img src="https://i.postimg.cc/1zqmWjSY/photo-5467372104157624625-x.jpg" alt="Мария, заказчик">
           </div>
           <div class="review-content">
             <h3>Мария</h3>
@@ -655,7 +666,7 @@
         </div>
         <div class="review-card" data-aos="zoom-in" data-aos-delay="100">
           <div class="review-photo">
-            <img src="images/review2.jpg" alt="Владимир, заказчик">
+            <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424526_y.jpg?raw=true" alt="Владимир, заказчик">
           </div>
           <div class="review-content">
             <h3>Владимир</h3>
@@ -675,17 +686,17 @@
       </form>
     </section>
   </main>
-
-  <!-- Кнопка Сергей с неоном, всегда фиксирована -->
+  <!-- Кнопка Сергей -->
   <button class="sergey-fab" onclick="openSergeyChat()" aria-label="Чат с прорабом Сергеем">
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="24" cy="24" r="24" fill="#111"/>
+      <rect x="0" y="0" width="48" height="48" rx="12" fill="#111"/>
       <path d="M24 8c-4.418 0-8 3.582-8 8v2c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2v-2c0-4.418-3.582-8-8-8zm0 20c-5.523 0-10 4.477-10 10h20c0-5.523-4.477-10-10-10z" fill="#FF6F61"/>
       <circle cx="24" cy="20" r="4" fill="#FF6F61"/>
     </svg>
-    <span style="font-size:0.85rem;">Сергей<br>Прораб</span>
+    <span>
+      Сергей<br>Прораб
+    </span>
   </button>
-
   <footer class="footer">
     <div class="footer-content">
       <span class="footer-logo">Свой дом НН</span>
@@ -701,10 +712,8 @@
     </div>
   </footer>
   <button id="toTop" aria-label="Наверх" title="Наверх">↑</button>
-
   <!-- Chatbase Sergey scripts -->
   <script>
-    // Функция, которая будет открывать чат-бота
     function openSergeyChat() {
         if (window.chatbase && typeof window.chatbase.openChat === 'function') {
             window.chatbase.openChat();
@@ -736,7 +745,6 @@
       else{window.addEventListener("load",onLoad)}
     })();
   </script>
-
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ once: true, duration: 700, offset: 80 });
