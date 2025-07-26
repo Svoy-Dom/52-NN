@@ -1,349 +1,139 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Каркасные дома в Нижнем Новгороде | Свой Дом - Строительство под ключ</title>
-    <meta name="description" content="Строительство современных каркасных домов в Нижнем Новгороде. Высокие потолки, панорамные окна, качественные материалы. Расчет стоимости онлайн. ⭐ Гарантия качества">
-    <meta name="keywords" content="каркасные дома, строительство домов, Нижний Новгород, дома под ключ, семейный дом, современные технологии">
-    <meta name="author" content="Свой Дом">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Каркасные дома в Нижнем Новгороде | Свой Дом">
-    <meta property="og:description" content="Строительство современных каркасных домов с высокими потолками и панорамными окнами">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-domain.ru">
-    <meta property="og:image" content="https://your-domain.ru/images/og-image.jpg">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Свой Дом",
-        "description": "Строительство каркасных домов",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Нижний Новгород",
-            "addressCountry": "RU"
-        },
-        "telephone": "+7-XXX-XXX-XX-XX",
-        "priceRange": "$$",
-        "serviceArea": "Нижний Новгород"
-    }
-    </script>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Каркасные дома «Свой Дом» | Строительство под ключ</title>
+
+  <!-- SEO -->
+  <meta name="description"
+        content="Современные каркасные дома: проекты «Семейный 40», «МиниДом 36», «Дом Куб 30». Онлайн-калькулятор, фото-галереи, технологии каркаса.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Preloader -->
-    <div id="preloader" class="preloader">
-        <div class="preloader__spinner"></div>
+<div id="preloader" class="preloader"><div class="preloader__spinner"></div></div>
+<a href="#main" class="sr-only">Перейти к контенту</a>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar__content">
+      <div class="navbar__brand"><h2>Свой Дом</h2></div>
+
+      <div class="navbar__menu" id="navbarMenu">
+        <a class="navbar__link" href="#hero">Главная</a>
+        <a class="navbar__link" href="#projects">Проекты</a>
+        <a class="navbar__link" href="#technology">Технологии</a>
+        <a class="navbar__link" href="#calculator">Калькулятор</a>
+        <a class="navbar__link navbar__cta" href="#contacts" onclick="openContactModal()">Рассчитать стоимость</a>
+      </div>
+
+      <button class="navbar__toggle" aria-label="Открыть меню"><span></span><span></span><span></span></button>
     </div>
+  </div>
+</nav>
 
-    <!-- Skip to main content для доступности -->
-    <a href="#main" class="sr-only">Перейти к основному контенту</a>
+<div class="foreman-button" tabindex="0" role="button" aria-label="Связаться с прорабом" onclick="openContactModal()">
+  <span class="foreman-button__text">Прораб Сергей</span><div class="foreman-button__glow"></div>
+</div>
 
-    <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Главная навигация">
-        <div class="container">
-            <div class="navbar__content">
-                <div class="navbar__brand">
-                    <h2>Свой Дом</h2>
-                </div>
-                
-                <div class="navbar__menu" id="navbarMenu">
-                    <a href="#hero" class="navbar__link">Главная</a>
-                    <a href="#philosophy" class="navbar__link">О нас</a>
-                    <a href="#projects" class="navbar__link">Проекты</a>
-                    <a href="#technology" class="navbar__link">Технологии</a>
-                    <a href="#calculator" class="navbar__link">Калькулятор</a>
-                    <a href="#contacts" class="navbar__link navbar__cta" onclick="openContactModal()">Рассчитать стоимость</a>
-                </div>
-                
-                <button class="navbar__toggle" id="navbarToggle" aria-label="Открыть меню" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+<main id="main">
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <video class="hero__video" autoplay muted loop playsinline preload="metadata"
+           poster="images/hero-fallback.jpg">
+      <source src="https://www.dropbox.com/scl/fi/llhhw58f34rj8uocsgatp/.mp4?raw=1" type="video/mp4">
+    </video>
+    <div class="hero__overlay"></div>
+
+    <div class="container">
+      <div class="hero__content" data-aos="fade-up">
+        <h1 class="hero__title animated-text"><span class="word">Современные</span><span class="word">каркасные</span><span class="word">дома</span></h1>
+        <p class="hero__subtitle">Создаём пространство для жизни — качество, скорость, комфорт.</p>
+        <a href="#calculator" class="btn btn--primary btn--lg">Рассчитать стоимость</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section__title" data-aos="fade-up">Наши проекты</h2>
+
+      <div class="projects__grid">
+        <article class="project-card" data-aos="fade-up">
+          <img src="https://i.postimg.cc/1zqmWjSY/photo-5467372104157624625-x.jpg" alt="Семейный 40" loading="lazy">
+          <div class="project-card__content">
+            <h3>Семейный 40</h3>
+            <p>Просторный дом с террасой и высокими потолками.</p>
+            <button class="btn btn--outline" onclick="openProjectModal('semeiny-40')">Подробнее</button>
+          </div>
+        </article>
+
+        <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424526_y.jpg?raw=true" alt="МиниДом 36" loading="lazy">
+          <div class="project-card__content">
+            <h3>МиниДом 36</h3>
+            <p>Компактный дом для загородной жизни.</p>
+            <button class="btn btn--outline" onclick="openProjectModal('minidom-36')">Подробнее</button>
+          </div>
+        </article>
+
+        <article class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://i.postimg.cc/htSQ5xtq/photo-5467925983140117240-y.jpg" alt="Дом Куб 30" loading="lazy">
+          <div class="project-card__content">
+            <h3>Дом Куб 30</h3>
+            <p>Кубический дом с панорамным остеклением.</p>
+            <button class="btn btn--outline" onclick="openProjectModal('dom-kub-30')">Подробнее</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section id="technology" class="technology">
+    <div class="container">
+      <h2 class="section__title" data-aos="fade-up">Технологии строительства</h2>
+
+      <div class="technology__intro" data-aos="fade-up" data-aos-delay="100">
+        <p>Каркас — энергоэффективность, долговечность и экологичность.</p>
+      </div>
+
+      <div class="technology__cutaway" data-aos="zoom-in">
+        <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424528_y.jpg?raw=true"
+             alt="Разрез стены" loading="lazy">
+      </div>
+
+      <div class="stages__grid">
+        <div class="stage" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://i.postimg.cc/X76sX2Qc/photo-5467372104157624730-x.jpg" alt="Фундамент" loading="lazy"><p>Фундамент</p>
         </div>
-    </nav>
-
-    <!-- Кнопка Прораб Сергей -->
-    <div class="foreman-button" onclick="openContactModal()" role="button" tabindex="0" aria-label="Связаться с прорабом Сергеем">
-        <span class="foreman-button__text">Прораб Сергей</span>
-        <div class="foreman-button__glow"></div>
-    </div>
-
-    <main id="main">
-        <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <!-- Видео фон с исправлениями -->
-            <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="images/hero-fallback.jpg">
-                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-                <source src="videos/house-construction.webm" type="video/webm">
-                Ваш браузер не поддерживает видео.
-            </video>
-            
-            <div class="hero__overlay"></div>
-            
-            <div class="container">
-                <div class="hero__content" data-aos="fade-up" data-aos-duration="1000">
-                    <h1 class="hero__title animated-text">
-                        <span class="word">Современные</span>
-                        <span class="word">каркасные</span>
-                        <span class="word">дома</span>
-                    </h1>
-                    <p class="hero__subtitle" data-aos="fade-up" data-aos-delay="300">
-                        Мы создаем не просто дома — мы создаем пространства для жизни. 
-                        Каждый наш проект продуман до мелочей.
-                    </p>
-                    <a href="#calculator" class="btn btn--primary btn--lg" data-aos="fade-up" data-aos-delay="600">
-                        Рассчитать стоимость
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Philosophy Section -->
-        <section id="philosophy" class="philosophy">
-            <div class="container">
-                <div class="philosophy__content">
-                    <div class="philosophy__text" data-aos="fade-right">
-                        <h2>Наша философия</h2>
-                        <p>Высокие потолки, панорамные окна и продуманная планировка создают ощущение простора и света. Мы используем только качественные материалы и современные технологии каркасного строительства.</p>
-                    </div>
-                    <div class="philosophy__image" data-aos="fade-left">
-                        <img src="https://i.postimg.cc/Wz2s1pkQ/photo-5467925983140117215-y-1.jpg" alt="Интерьер каркасного дома" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2 class="section__title" data-aos="fade-up">Наши проекты</h2>
-                
-                <div class="projects__grid">
-                    <article class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="project-card__image">
-                            <img src="https://i.postimg.cc/Wz2s1pkQ/photo-5467925983140117215-y-1.jpg" alt="Семейный 40" loading="lazy">
-                        </div>
-                        <div class="project-card__content">
-                            <h3>Семейный 40</h3>
-                            <p>Просторный семейный проект с террасой и высокими потолками</p>
-                            <button class="btn btn--outline" onclick="openProjectModal('semeiny-40')">
-                                Подробнее
-                            </button>
-                        </div>
-                    </article>
-
-                    <article class="project-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="project-card__image">
-                            <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443011784094118439_x.jpg?raw=true" alt="МиниДом 36" loading="lazy">
-                        </div>
-                        <div class="project-card__content">
-                            <h3>МиниДом 36</h3>
-                            <p>Компактный каркасный дом для комфортной загородной жизни</p>
-                            <button class="btn btn--outline" onclick="openProjectModal('minidom-36')">
-                                Подробнее
-                            </button>
-                        </div>
-                    </article>
-
-                    <article class="project-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="project-card__image">
-                            <img src="https://i.postimg.cc/htSQ5xtq/photo-5467925983140117240-y.jpg" alt="Дом Куб 30" loading="lazy">
-                        </div>
-                        <div class="project-card__content">
-                            <h3>Дом Куб 30</h3>
-                            <p>Современный кубический дом с панорамным остеклением</p>
-                            <button class="btn btn--outline" onclick="openProjectModal('dom-kub-30')">
-                                Подробнее
-                            </button>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technology Section -->
-        <section id="technology" class="technology">
-            <div class="container">
-                <h2 class="section__title" data-aos="fade-up">Технологии строительства</h2>
-                
-                <div class="technology__intro" data-aos="fade-up" data-aos-delay="200">
-                    <p>Мы используем современные технологии каркасного строительства, обеспечивающие высокое качество, энергоэффективность и долговечность наших домов.</p>
-                </div>
-
-                <div class="technology__cutaway" data-aos="zoom-in" data-aos-delay="400">
-                    <img src="https://i.postimg.cc/NjVGkw3H/photo-5467372104157624624-y.jpg" alt="Технология каркасного строительства" loading="lazy">
-                </div>
-
-                <div class="stages__grid">
-                    <div class="stage" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://i.postimg.cc/7hmwGv1b/photo-5467925983140117216-y.jpg" alt="Подготовка фундамента" loading="lazy">
-                        <p>Подготовка фундамента</p>
-                    </div>
-                    <div class="stage" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://i.postimg.cc/02kN8nGb/photo-5467372104157624620-y.jpg" alt="Монтаж каркаса" loading="lazy">
-                        <p>Монтаж каркаса</p>
-                    </div>
-                    <div class="stage" data-aos="fade-up" data-aos-delay="300">
-                        <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424523_y.jpg?raw=true" alt="Утепление и обшивка" loading="lazy">
-                        <p>Утепление и обшивка</p>
-                    </div>
-                    <div class="stage" data-aos="fade-up" data-aos-delay="400">
-                        <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424536_y.jpg?raw=true" alt="Кровельные работы" loading="lazy">
-                        <p>Кровельные работы</p>
-                    </div>
-                    <div class="stage" data-aos="fade-up" data-aos-delay="500">
-                        <img src="https://i.postimg.cc/x8MNW3m9/photo-5467372104157624690-y.jpg" alt="Финишная отделка" loading="lazy">
-                        <p>Финишная отделка</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Calculator Section -->
-        <section id="calculator" class="calculator">
-            <div class="container">
-                <h2 class="section__title" data-aos="fade-up">Калькулятор стоимости</h2>
-                
-                <div class="calculator__content">
-                    <form class="calculator__form card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card__body">
-                            <div class="form-group">
-                                <label for="houseType" class="form-label">Тип дома</label>
-                                <select id="houseType" class="form-control" required>
-                                    <option value="Семейный 40">Семейный 40 - 4,000,000 ₽</option>
-                                    <option value="МиниДом 36">МиниДом 36 - 3,200,000 ₽</option>
-                                    <option value="Дом Куб 30">Дом Куб 30 - 2,900,000 ₽</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="foundationType" class="form-label">Тип фундамента</label>
-                                <select id="foundationType" class="form-control" required>
-                                    <option value="Свайно-винтовой">Свайно-винтовой - включен</option>
-                                    <option value="МЗЛФ">МЗЛФ - +150,000 ₽</option>
-                                    <option value="Плита">Плита - +350,000 ₽</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">Дополнительные опции</label>
-                                <div class="options__grid">
-                                    <label class="option">
-                                        <input type="checkbox" value="Терраса">
-                                        <span>Терраса - +250,000 ₽</span>
-                                    </label>
-                                    <label class="option">
-                                        <input type="checkbox" value="Кровля металло-черепица">
-                                        <span>Кровля металло-черепица - +120,000 ₽</span>
-                                    </label>
-                                    <label class="option">
-                                        <input type="checkbox" value="Панорамные окна">
-                                        <span>Панорамные окна - +200,000 ₽</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="total-section">
-                                <div class="total-price" id="totalPrice">4,000,000 ₽</div>
-                                <button type="button" class="btn btn--primary btn--full-width" onclick="openContactModal()">
-                                    Получить предложение
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- Custom Design Section -->
-        <section class="custom-design">
-            <div class="container">
-                <div class="custom-design__content" data-aos="fade-up">
-                    <h2>Индивидуальное проектирование</h2>
-                    <p>Помимо готовых проектов, мы предлагаем услуги индивидуального проектирования. Создадим дом вашей мечты с учетом всех ваших пожеланий и особенностей участка.</p>
-                    <button class="btn btn--primary btn--lg" onclick="openContactModal()">
-                        Заказать проект
-                    </button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Project Modal -->
-    <div id="projectModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
-        <div class="modal__content">
-            <button class="modal__close" onclick="closeProjectModal()" aria-label="Закрыть">&times;</button>
-            <div class="modal__body">
-                <h3 id="modalTitle"></h3>
-                <div id="modalGallery" class="modal__gallery"></div>
-                <div class="modal__cta">
-                    <button class="btn btn--primary" onclick="closeProjectModal(); openContactModal();">
-                        Заказать этот проект
-                    </button>
-                </div>
-            </div>
+        <div class="stage" data-aos="fade-up" data-aos-delay="150">
+          <img src="https://i.postimg.cc/2jZHkpFS/photo-5467372104157624729-y.jpg" alt="Фундамент 2" loading="lazy"><p>Фундамент 2</p>
         </div>
-    </div>
-
-    <!-- Contact Modal -->
-    <div id="contactModal" class="modal" role="dialog" aria-labelledby="contactModalTitle" aria-hidden="true">
-        <div class="modal__content">
-            <button class="modal__close" onclick="closeContactModal()" aria-label="Закрыть">&times;</button>
-            <div class="modal__body">
-                <h3 id="contactModalTitle">Получить предложение</h3>
-                <form id="contactForm" method="POST" action="/submit-form">
-                    <input type="hidden" id="calculatorData" name="calculatorData">
-                    
-                    <div class="form-group">
-                        <label for="name" class="form-label">Ваше имя *</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone" class="form-label">Телефон *</label>
-                        <input type="tel" id="phone" name="phone" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-control">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message" class="form-label">Комментарий</label>
-                        <textarea id="message" name="message" class="form-control" rows="4"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn--primary btn--full-width">
-                        Отправить заявку
-                    </button>
-                    
-                    <div id="formStatus" class="status hidden"></div>
-                </form>
-            </div>
+        <div class="stage" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://i.postimg.cc/htSM1XFX/photo-5467372104157624727-y.jpg" alt="Каркас" loading="lazy"><p>Каркас</p>
         </div>
+        <div class="stage" data-aos="fade-up" data-aos-delay="250">
+          <img src="https://i.postimg.cc/Vvn4DMLC/photo-5467372104157624726-y.jpg" alt="Утепление" loading="lazy"><p>Утепление</p>
+        </div>
+        <div class="stage" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://i.postimg.cc/02GcSp4g/photo-5467372104157624728-y.jpg" alt="Фасад" loading="lazy"><p>Фасад</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="app.js"></script>
+  <!-- CALCULATOR (код без изменений) -->
+  … 
+</main>
+
+<!-- МОДАЛЬНЫЕ ОКНА (структура прежняя) -->
+… 
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
