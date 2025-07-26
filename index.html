@@ -39,10 +39,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="style.css" as="style">
-    
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
     
@@ -55,7 +51,7 @@
         <div class="preloader__spinner"></div>
     </div>
 
-    <!-- Skip to main content -->
+    <!-- Skip to main content для доступности -->
     <a href="#main" class="sr-only">Перейти к основному контенту</a>
 
     <!-- Navigation -->
@@ -75,7 +71,7 @@
                     <a href="#contacts" class="navbar__link navbar__cta" onclick="openContactModal()">Рассчитать стоимость</a>
                 </div>
                 
-                <button class="navbar__toggle" id="navbarToggle" aria-label="Открыть меню">
+                <button class="navbar__toggle" id="navbarToggle" aria-label="Открыть меню" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -84,8 +80,8 @@
         </div>
     </nav>
 
-    <!-- Foreman Sergey Button -->
-    <div class="foreman-button" onclick="openContactModal()">
+    <!-- Кнопка Прораб Сергей -->
+    <div class="foreman-button" onclick="openContactModal()" role="button" tabindex="0" aria-label="Связаться с прорабом Сергеем">
         <span class="foreman-button__text">Прораб Сергей</span>
         <div class="foreman-button__glow"></div>
     </div>
@@ -93,12 +89,11 @@
     <main id="main">
         <!-- Hero Section -->
         <section id="hero" class="hero">
-            <!-- Video Background -->
-            <video class="hero__video" autoplay muted loop playsinline preload="metadata">
+            <!-- Видео фон с исправлениями -->
+            <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="images/hero-fallback.jpg">
                 <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
                 <source src="videos/house-construction.webm" type="video/webm">
-                <!-- Fallback image -->
-                <img src="images/hero-fallback.jpg" alt="Строительство каркасного дома">
+                Ваш браузер не поддерживает видео.
             </video>
             
             <div class="hero__overlay"></div>
@@ -130,7 +125,7 @@
                         <p>Высокие потолки, панорамные окна и продуманная планировка создают ощущение простора и света. Мы используем только качественные материалы и современные технологии каркасного строительства.</p>
                     </div>
                     <div class="philosophy__image" data-aos="fade-left">
-                        <img src="images/philosophy.jpg" alt="Интерьер каркасного дома" loading="lazy">
+                        <img src="https://i.postimg.cc/Wz2s1pkQ/photo-5467925983140117215-y-1.jpg" alt="Интерьер каркасного дома" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -143,10 +138,12 @@
                 
                 <div class="projects__grid">
                     <article class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://i.postimg.cc/Wz2s1pkQ/photo-5467925983140117215-y-1.jpg" alt="Семейный 40" loading="lazy">
+                        <div class="project-card__image">
+                            <img src="https://i.postimg.cc/Wz2s1pkQ/photo-5467925983140117215-y-1.jpg" alt="Семейный 40" loading="lazy">
+                        </div>
                         <div class="project-card__content">
                             <h3>Семейный 40</h3>
-                            <p>Просторный семейный проект с terrасой и высокими потолками</p>
+                            <p>Просторный семейный проект с террасой и высокими потолками</p>
                             <button class="btn btn--outline" onclick="openProjectModal('semeiny-40')">
                                 Подробнее
                             </button>
@@ -154,7 +151,9 @@
                     </article>
 
                     <article class="project-card" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443011784094118439_x.jpg?raw=true" alt="МиниДом 36" loading="lazy">
+                        <div class="project-card__image">
+                            <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443011784094118439_x.jpg?raw=true" alt="МиниДом 36" loading="lazy">
+                        </div>
                         <div class="project-card__content">
                             <h3>МиниДом 36</h3>
                             <p>Компактный каркасный дом для комфортной загородной жизни</p>
@@ -165,7 +164,9 @@
                     </article>
 
                     <article class="project-card" data-aos="fade-up" data-aos-delay="300">
-                        <img src="https://i.postimg.cc/htSQ5xtq/photo-5467925983140117240-y.jpg" alt="Дом Куб 30" loading="lazy">
+                        <div class="project-card__image">
+                            <img src="https://i.postimg.cc/htSQ5xtq/photo-5467925983140117240-y.jpg" alt="Дом Куб 30" loading="lazy">
+                        </div>
                         <div class="project-card__content">
                             <h3>Дом Куб 30</h3>
                             <p>Современный кубический дом с панорамным остеклением</p>
@@ -188,28 +189,28 @@
                 </div>
 
                 <div class="technology__cutaway" data-aos="zoom-in" data-aos-delay="400">
-                    <img src="images/cutaway.jpg" alt="Технология каркасного строительства" loading="lazy">
+                    <img src="https://i.postimg.cc/NjVGkw3H/photo-5467372104157624624-y.jpg" alt="Технология каркасного строительства" loading="lazy">
                 </div>
 
                 <div class="stages__grid">
                     <div class="stage" data-aos="fade-up" data-aos-delay="100">
-                        <img src="images/foundation.jpg" alt="Подготовка фундамента" loading="lazy">
+                        <img src="https://i.postimg.cc/7hmwGv1b/photo-5467925983140117216-y.jpg" alt="Подготовка фундамента" loading="lazy">
                         <p>Подготовка фундамента</p>
                     </div>
                     <div class="stage" data-aos="fade-up" data-aos-delay="200">
-                        <img src="images/frame.jpg" alt="Монтаж каркаса" loading="lazy">
+                        <img src="https://i.postimg.cc/02kN8nGb/photo-5467372104157624620-y.jpg" alt="Монтаж каркаса" loading="lazy">
                         <p>Монтаж каркаса</p>
                     </div>
                     <div class="stage" data-aos="fade-up" data-aos-delay="300">
-                        <img src="images/insulation.jpg" alt="Утепление и обшивка" loading="lazy">
+                        <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424523_y.jpg?raw=true" alt="Утепление и обшивка" loading="lazy">
                         <p>Утепление и обшивка</p>
                     </div>
                     <div class="stage" data-aos="fade-up" data-aos-delay="400">
-                        <img src="images/roof.jpg" alt="Кровельные работы" loading="lazy">
+                        <img src="https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424536_y.jpg?raw=true" alt="Кровельные работы" loading="lazy">
                         <p>Кровельные работы</p>
                     </div>
                     <div class="stage" data-aos="fade-up" data-aos-delay="500">
-                        <img src="images/finish.jpg" alt="Финишная отделка" loading="lazy">
+                        <img src="https://i.postimg.cc/x8MNW3m9/photo-5467372104157624690-y.jpg" alt="Финишная отделка" loading="lazy">
                         <p>Финишная отделка</p>
                     </div>
                 </div>
@@ -308,7 +309,7 @@
             <button class="modal__close" onclick="closeContactModal()" aria-label="Закрыть">&times;</button>
             <div class="modal__body">
                 <h3 id="contactModalTitle">Получить предложение</h3>
-                <form id="contactForm" action="#" method="POST">
+                <form id="contactForm" method="POST" action="/submit-form">
                     <input type="hidden" id="calculatorData" name="calculatorData">
                     
                     <div class="form-group">
