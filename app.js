@@ -1,4 +1,4 @@
-// --- Navigation / Menu Toggle ---
+// Navigation menu toggle
 const navbarToggle = document.querySelector('.navbar__toggle');
 const navbarMenu = document.querySelector('.navbar__menu');
 if (navbarToggle && navbarMenu) {
@@ -8,7 +8,7 @@ if (navbarToggle && navbarMenu) {
   });
 }
 
-// --- Smooth scrolling for internal links ---
+// Smooth scroll for anchor links
 const internalLinks = document.querySelectorAll('a[href^="#"]');
 internalLinks.forEach(link => {
   link.addEventListener('click', e => {
@@ -17,15 +17,15 @@ internalLinks.forEach(link => {
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Закрытие меню на мобиле
-      if (navbarMenu && navbarMenu.classList.contains('active')) {
+      // Close menu if open
+      if (navbarMenu.classList.contains('active')) {
         navbarToggle.click();
       }
     }
   });
 });
 
-// --- Preloader ---
+// Preloader removal after load
 window.addEventListener('load', () => {
   const preloader = document.getElementById('preloader');
   if (preloader) {
@@ -34,12 +34,12 @@ window.addEventListener('load', () => {
   }
 });
 
-// --- AOS initialization ---
+// AOS animation library init
 if (typeof AOS !== 'undefined') {
   AOS.init({ once: true, duration: 700, offset: 80 });
 }
 
-// --- Калькулятор ---
+// Calculator logic
 const calculatorPrices = {
   base: {
     'Семейный 40': 4000000,
@@ -61,6 +61,7 @@ const houseType = document.getElementById('houseType');
 const foundationType = document.getElementById('foundationType');
 const optionCheckboxes = document.querySelectorAll('.options__grid input[type="checkbox"]');
 const totalPriceEl = document.getElementById('totalPrice');
+
 function formatPrice(num) {
   return new Intl.NumberFormat('ru-RU').format(num) + ' ₽';
 }
@@ -86,7 +87,7 @@ if (houseType && foundationType && totalPriceEl) {
   calculateTotal();
 }
 
-// --- Проекты: Галереи и модальные окна ---
+// Модальные галереи проектов
 const projectsData = {
   'semeiny-40': {
     title: 'Семейный 40',
@@ -103,10 +104,10 @@ const projectsData = {
       'https://i.postimg.cc/dVDtC0xF/photo-5467372104157624622-y.jpg',
       'https://i.postimg.cc/Hx1pF9sW-/photo-5467452858132723456-y.jpg',
       'https://i.postimg.cc/ZR6qqDDy/photo-5467372104157624616-y.jpg'
-]
+    ]
   },
   'minidom-36': {
-    title: 'МиниДом 36',
+title: 'МиниДом 36',
     gallery: [
       'https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443011784094118439_x.jpg?raw=true',
       'https://github.com/domdom610/Svoy-Dom/blob/main/images/photo_5443140577278424523_y.jpg?raw=true',
@@ -148,14 +149,13 @@ window.closeProjectModal = function () {
   projectModal.classList.remove('show');
 };
 
-// --- Контактная форма и модальное окно ---
+// Модальное "Контакт"
 const contactModal = document.getElementById('contactModal');
 const calculatorDataInput = document.getElementById('calculatorData');
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 
 window.openContactModal = function () {
-  // Save текущие данные калькулятора
   if (calculatorDataInput && houseType && foundationType) {
     const data = {
       houseType: houseType.value,
@@ -171,7 +171,7 @@ window.closeContactModal = function () {
   contactModal.classList.remove('show');
 };
 
-// --- Отправка формы ---
+// Отправка формы
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -179,7 +179,6 @@ if (contactForm) {
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     submitBtn.classList.add('loading');
     try {
-      // Обычный POST-запрос; action может быть любой сервис почтовой обработки/скрипт
       const resp = await fetch(contactForm.action || '#', { method: 'POST', body: formData });
       if (resp.ok) {
         showFormStatus('Спасибо! Мы скоро свяжемся с вами.', 'success');
@@ -201,7 +200,8 @@ function showFormStatus(message, type) {
   formStatus.classList.remove('hidden');
   setTimeout(() => formStatus.classList.add('hidden'), 5000);
 }
-// --- Escape для закрытия модалок, закрывает меню ---
+
+// Escape key closes modals and menu
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     document.querySelectorAll('.modal.show').forEach(modal =>
@@ -212,8 +212,7 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
-
-// --- Foreman button: поддержка клавиатуры ---
+// Foreman button: клавиатура
 const foremanButton = document.querySelector('.foreman-button');
 if (foremanButton) {
   foremanButton.addEventListener('keydown', (e) => {
@@ -224,7 +223,7 @@ if (foremanButton) {
   });
 }
 
-// --- Анимация появления по словам (H1) ---
+// Анимация появления для hero (каждое слово)
 document.addEventListener('DOMContentLoaded', () => {
   const animatedText = document.querySelector('.animated-text');
   if (animatedText) {
@@ -234,4 +233,3 @@ document.addEventListener('DOMContentLoaded', () => {
       word.classList.add('animate-word');
     });
   }
-});
